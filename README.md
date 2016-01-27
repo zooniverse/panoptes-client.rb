@@ -1,5 +1,9 @@
 # Panoptes::Client
 
+[![Build Status](https://travis-ci.org/zooniverse/panoptes-client.rb.svg?branch=master)](https://travis-ci.org/zooniverse/panoptes-client.rb)
+[![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/github/zooniverse/panoptes-client.rb/)
+
+
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/panoptes/client`. To experiment with that code, run `bin/console` for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
