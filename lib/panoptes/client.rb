@@ -15,6 +15,13 @@ module Panoptes
     include Panoptes::Client::Subjects
     include Panoptes::Client::UserGroups
 
+    # A client is the main interface to the API.
+    #
+    # @param auth [Hash] Authentication details
+    #   * either nothing,
+    #   * a hash with +:token+ (an existing OAuth user token),
+    #   * or a hash with +:client_id+ and +:client_secret+ (a keypair for an OAuth Application).
+    # @param url [String] Optional override for the API location to use. Defaults to the official production environment.
     def initialize(auth: {}, url: "https://panoptes.zooniverse.org")
       @conn = Faraday.new(url: url) do |faraday|
         case

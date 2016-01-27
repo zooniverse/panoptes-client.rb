@@ -3,36 +3,32 @@
 [![Build Status](https://travis-ci.org/zooniverse/panoptes-client.rb.svg?branch=master)](https://travis-ci.org/zooniverse/panoptes-client.rb)
 [![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/github/zooniverse/panoptes-client.rb/)
 
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/panoptes/client`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
-
-Add this line to your application's Gemfile:
 
 ```ruby
 gem 'panoptes-client'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install panoptes-client
-
 ## Usage
 
-TODO: Write usage instructions here
+In general, this library is supposed to be a thin, flat layer over our [HTTP-based API](http://docs.panoptes.apiary.io/). All public API methods can be found on the `Client` object.
+
+**A lot of methods are still missing. We've only just started with this wrapper. You can either issue a PR adding the one you need, or use the generic `get` / `post` methods on `Client`.**
+
 
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+The test suite uses VCR to record HTTP requests, so if you're not making any new requests you should be fine with the existing cassettes. If you are, the test suite uses environment variables to pull in authentication credentials. You'll need to [create an OAuth application on staging](https://panoptes-staging.zooniverse.org/oauth/applications), and set the following env vars:
+
+| Variable                   | Value |
+-----------------------------|-------|
+| `ZOONIVERSE_CLIENT_ID`     | The application id |
+| `ZOONIVERSE_CLIENT_SECRET` | The application secret |
+| `ZOONIVERSE_ACCESS_TOKEN`  | An OAuth access token for the API |
+
+We recommend [Direnv](https://github.com/direnv/direnv) as good utility to allow you to specify environment variables per directory.
 
 ## Contributing
 
