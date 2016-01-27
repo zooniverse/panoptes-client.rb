@@ -4,12 +4,14 @@ require 'faraday/panoptes'
 
 require "panoptes/client/version"
 require "panoptes/client/me"
+require "panoptes/client/projects"
 require "panoptes/client/subjects"
 require "panoptes/client/user_groups"
 
 module Panoptes
   class Client
     include Panoptes::Client::Me
+    include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
     include Panoptes::Client::UserGroups
 
@@ -29,8 +31,8 @@ module Panoptes
       end
     end
 
-    def get(path)
-      conn.get("/api" + path).body
+    def get(path, query = {})
+      conn.get("/api" + path, query).body
     end
 
     def post(path, body = {})
