@@ -1,3 +1,7 @@
+# 0.1.2
+
+* Fix bug with client_id/client_secret authentication
+
 # 0.1.1
 
 * Added wrapper file so Bundler's automatic require works.

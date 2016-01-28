@@ -28,7 +28,7 @@ module Panoptes
         when auth[:token]
           faraday.request :panoptes_access_token, url: url, access_token: token
         when auth[:client_id] && auth[:client_secret]
-          faraday.request :panoptes_client_credentials, url: url, client_id: client_id, client_secret: client_secret
+          faraday.request :panoptes_client_credentials, url: url, client_id: auth[:client_id], client_secret: auth[:client_secret]
         end
 
         faraday.request :panoptes_api_v1
