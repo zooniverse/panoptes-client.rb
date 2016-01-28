@@ -10,6 +10,11 @@ require "panoptes/client/user_groups"
 
 module Panoptes
   class Client
+    class GenericError < StandardError; end
+    class ConnectionFailed < GenericError; end
+    class ResourceNotFound < GenericError; end
+    class ServerError < GenericError; end
+
     include Panoptes::Client::Me
     include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
@@ -39,11 +44,28 @@ module Panoptes
     end
 
     def get(path, query = {})
-      conn.get("/api" + path, query).body
+      response = conn.get("/api" + path, query)
+      handle_response(response)
     end
 
     def post(path, body = {})
-      conn.post("/api" + path, body).body
+      response = conn.post("/api" + path, body)
+      handle_response(response)
+    end
+
+    def put(path, body = {})
+      response = conn.put("/api" + path, body)
+      handle_response(response)
+    end
+
+    def patch(path, body = {})
+      response = conn.patch("/api" + path, body)
+      handle_response(response)
+    end
+
+    def delete(path, query = {})
+      response = conn.delete("/api" + path, query)
+      handle_response(response)
     end
 
     # Get a path and perform automatic depagination
@@ -69,6 +91,17 @@ module Panoptes
 
     def conn
       @conn
+    end
+
+    def handle_response(response)
+      case response.status
+      when 404
+        raise ResourceNotFound, status: response.status, body: response.body
+      when 400..600
+        raise ServerError
+      else
+        response.body
+      end
     end
   end
 end

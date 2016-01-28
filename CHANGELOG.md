@@ -1,3 +1,8 @@
+# 0.2.0
+
+* Raise errors on certain server response statuses.
+* Add put/patch/delete requests.
+
 # 0.1.2
 
 * Fix bug with client_id/client_secret authentication
