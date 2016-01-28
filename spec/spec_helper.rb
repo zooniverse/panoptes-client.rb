@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'panoptes/client'
+require 'panoptes-client'
 
 require 'webmock/rspec'
 require 'vcr'
