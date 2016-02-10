@@ -1,3 +1,7 @@
+# 0.2.1
+
+* Fix bug with token authentication
+
 # 0.2.0
 
 * Raise errors on certain server response statuses.

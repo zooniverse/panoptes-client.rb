@@ -31,7 +31,7 @@ module Panoptes
       @conn = Faraday.new(url: url) do |faraday|
         case
         when auth[:token]
-          faraday.request :panoptes_access_token, url: url, access_token: token
+          faraday.request :panoptes_access_token, url: url, access_token: auth[:token]
         when auth[:client_id] && auth[:client_secret]
           faraday.request :panoptes_client_credentials, url: url, client_id: auth[:client_id], client_secret: auth[:client_secret]
         end
