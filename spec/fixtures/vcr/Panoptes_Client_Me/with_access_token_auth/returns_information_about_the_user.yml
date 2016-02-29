@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/me
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Mon, 29 Feb 2016 16:18:37 GMT
+      Last-Modified:
+      - Mon, 30 Nov 2015 14:17:50 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - d87edd49-e482-45f4-acfe-bd4e6e6b6629
+      X-Runtime:
+      - '0.034214'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1403'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"users":[{"id":"1323869","login":"martenzooniverse","display_name":"martenzooniverse","credited_name":"Marten
+        Veldthuis","email":"marten@zooniverse.org","created_at":"2015-06-26T13:41:47.956Z","updated_at":"2015-11-30T14:17:50.010Z","type":"users","global_email_communication":false,"project_email_communication":null,"beta_email_communication":false,"max_subjects":100,"uploaded_subjects_count":0,"admin":true,"href":"/users/1323869","login_prompt":false,"private_profile":true,"links":{}}],"links":{"users.classifications":{"href":"/classifications?user_id={users.id}","type":"classifications"},"users.project_preferences":{"href":"/project_preferences?user_id={users.id}","type":"project_preferences"},"users.collection_preferences":{"href":"/collection_preferences?user_id={users.id}","type":"collection_preferences"},"users.projects":{"href":"/projects?owner={users.login}","type":"projects"},"users.collections":{"href":"/collections?owner={users.login}","type":"collections"},"users.recents":{"href":"/users/{users.id}/recents","type":"recents"},"users.avatar":{"href":"/users/{users.id}/avatar","type":"media"},"users.profile_header":{"href":"/users/{users.id}/profile_header","type":"media"}},"meta":{"users":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/users","previous_href":null,"next_href":null,"last_href":"/users"}}}'
+    http_version: 
+  recorded_at: Mon, 29 Feb 2016 16:18:43 GMT
+recorded_with: VCR 3.0.1

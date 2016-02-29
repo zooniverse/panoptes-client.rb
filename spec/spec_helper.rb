@@ -26,7 +26,7 @@ def unauthenticated_client
 end
 
 def application_client
-  Panoptes::Client.new(url: test_url, auth: {client_id: test_client_id, client_secret: client_secret})
+  Panoptes::Client.new(url: test_url, auth: {client_id: test_client_id, client_secret: test_client_secret})
 end
 
 def user_client

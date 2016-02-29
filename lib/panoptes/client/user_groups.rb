@@ -11,6 +11,17 @@ module Panoptes
           name: name
         })["user_groups"][0]
       end
+
+      def user_groups
+        get("/user_groups")["user_groups"]
+      end
+
+      def join_user_group(user_group_id, user_id, join_token:)
+        post("/memberships", memberships: {
+          join_token: join_token,
+          links: {user: user_id, user_group: user_group_id}
+        })["memberships"][0]
+      end
     end
   end
 end
