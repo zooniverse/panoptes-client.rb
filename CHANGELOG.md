@@ -1,3 +1,11 @@
+# 0.2.3
+
+* Add methods for creating project data exports
+
+# 0.2.2
+
+* ?
+
 # 0.2.1
 
 * Fix bug with token authentication
