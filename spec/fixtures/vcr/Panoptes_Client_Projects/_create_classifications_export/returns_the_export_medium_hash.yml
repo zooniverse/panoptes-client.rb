@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://panoptes-staging.zooniverse.org/api/projects/813/classifications_export
+    body:
+      encoding: UTF-8
+      string: '{"media":{"content_type":"text/csv","metadata":{"recipients":[]}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Tue, 08 Mar 2016 14:33:25 GMT
+      Last-Modified:
+      - Tue, 08 Mar 2016 14:33:25 GMT
+      Location:
+      - https://panoptes-staging.zooniverse.org/api/projects/813/classifications_export
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - f737ab63-80df-46d3-aa18-74d72a82be33
+      X-Runtime:
+      - '0.070277'
+      X-Xss-Protection:
+      - 1; mode=block
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"media":[{"id":"38663","href":"/projects/813/classifications_export","src":"https://zooniverse-static.s3.amazonaws.com/panoptes-uploads.zooniverse.org/staging/project_classifications_export/9c610961-b313-4913-9b16-f3a8b3746ea6.csv?AWSAccessKeyId=AKIAJ7CH25FJAJXZNYMA\u0026Expires=1457451205\u0026Signature=pQjLY7cPGCD362zdZbP88EgW2Uw%3D","content_type":"text/csv","media_type":"project_classifications_export","external_link":false,"created_at":"2015-07-15T08:10:39.919Z","metadata":{"recipients":[]},"updated_at":"2016-03-08T14:33:25.640Z","links":{"linked":{"href":"/projects/813","id":"813","type":"projects"}}}],"meta":{"media":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/media","previous_href":null,"next_href":null,"last_href":"/media"}}}'
+    http_version: 
+  recorded_at: Tue, 08 Mar 2016 14:33:27 GMT
+recorded_with: VCR 3.0.1
