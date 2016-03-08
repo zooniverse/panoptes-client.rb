@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://panoptes-staging.zooniverse.org/api/projects/813/classifications_export
+    uri: https://panoptes-staging.zooniverse.org/api/projects/813/workflows_export
     body:
       encoding: UTF-8
       string: '{"media":{"content_type":"text/csv","metadata":{"recipients":[]}}}'
@@ -27,11 +27,11 @@ http_interactions:
       Content-Type:
       - application/vnd.api+json; version=1; charset=utf-8
       Date:
-      - Tue, 08 Mar 2016 14:45:00 GMT
+      - Tue, 08 Mar 2016 14:45:01 GMT
       Last-Modified:
-      - Tue, 08 Mar 2016 14:45:00 GMT
+      - Tue, 08 Mar 2016 14:45:01 GMT
       Location:
-      - https://panoptes-staging.zooniverse.org/api/projects/813/classifications_export
+      - https://panoptes-staging.zooniverse.org/api/projects/813/workflows_export
       P3p:
       - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
       Server:
@@ -45,18 +45,18 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - f3f15b49-d4af-4c3d-b060-4146a2f3dbac
+      - 2d41ab49-667c-4b6c-acec-00173fed5b8d
       X-Runtime:
-      - '0.088402'
+      - '0.093692'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '695'
+      - '677'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"media":[{"id":"46497","href":"/projects/813/classifications_export","src":"https://panoptes-uploads.zooniverse.org/staging/project_classifications_export/94e4cf03-d016-4f63-915a-6ce1f5e145dc.csv","content_type":"text/csv","media_type":"project_classifications_export","external_link":false,"created_at":"2016-03-08T14:45:00.625Z","metadata":{"state":"creating","recipients":[]},"updated_at":"2016-03-08T14:45:00.625Z","links":{"linked":{"href":"/projects/813","id":"813","type":"projects"}}}],"meta":{"media":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/media","previous_href":null,"next_href":null,"last_href":"/media"}}}'
+      string: '{"media":[{"id":"46499","href":"/projects/813/workflows_export","src":"https://panoptes-uploads.zooniverse.org/staging/project_workflows_export/0d84caf1-5e5e-4047-a9f0-556274cc1194.csv","content_type":"text/csv","media_type":"project_workflows_export","external_link":false,"created_at":"2016-03-08T14:45:01.583Z","metadata":{"state":"creating","recipients":[]},"updated_at":"2016-03-08T14:45:01.583Z","links":{"linked":{"href":"/projects/813","id":"813","type":"projects"}}}],"meta":{"media":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/media","previous_href":null,"next_href":null,"last_href":"/media"}}}'
     http_version: 
-  recorded_at: Tue, 08 Mar 2016 14:45:02 GMT
+  recorded_at: Tue, 08 Mar 2016 14:45:03 GMT
 recorded_with: VCR 3.0.1
