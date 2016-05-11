@@ -1,3 +1,7 @@
+# 0.2.4
+
+* Add support for the new retirement reason field
+
 # 0.2.3
 
 * Add methods for creating project data exports
