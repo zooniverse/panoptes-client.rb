@@ -1,3 +1,8 @@
+# 0.2.5
+
+* Add `client.remove_user_from_user_group` that can be used by group admins to remove some other user from a group.
+* Add `client.delete_user_group` to remove a user group.
+
 # 0.2.4
 
 * Add support for the new retirement reason field
