@@ -63,8 +63,11 @@ module Panoptes
       handle_response(response)
     end
 
-    def delete(path, query = {})
-      response = conn.delete("/api" + path, query)
+    def delete(path, query = {}, etag: nil)
+      headers = {}
+      headers["If-Match"] = etag if etag
+
+      response = conn.delete("/api" + path, query, headers)
       handle_response(response)
     end
 

@@ -22,6 +22,17 @@ module Panoptes
           links: {user: user_id, user_group: user_group_id}
         })["memberships"][0]
       end
+
+      def remove_user_from_user_group(user_group_id, user_id)
+        delete("/user_groups/#{user_group_id}/links/users/#{user_id}")
+      end
+
+      def delete_user_group(user_group_id)
+        response = conn.get("/api/user_groups/#{user_group_id}")
+        etag = response.headers["ETag"]
+
+        delete("/user_groups/#{user_group_id}", {}, etag: etag)
+      end
     end
   end
 end
