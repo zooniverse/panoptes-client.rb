@@ -22,5 +22,15 @@ describe Panoptes::Client::UserGroups do
       expect(membership["links"]["user"]).to eq("1323869")
       assert_requested :post, api_url('/memberships')
     end
+
+    it 'removes someone from a group' do
+      client.remove_user_from_user_group("1325971", "1323570")
+      assert_requested :delete, api_url('/user_groups/1325971/links/users/1323570')
+    end
+
+    it 'deletes a user group' do
+      client.delete_user_group("1325971")
+      assert_requested :delete, api_url('/user_groups/1325971')
+    end
   end
 end
