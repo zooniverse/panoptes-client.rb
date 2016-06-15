@@ -1,0 +1,235 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://panoptes-staging.zooniverse.org/api/subject_sets
+    body:
+      encoding: UTF-8
+      string: '{"subject_sets":{"display_name":"panoptes-client.rb 1465992776","links":{"project":813,"subjects":[11932]}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 12:12:57 GMT
+      Last-Modified:
+      - Wed, 15 Jun 2016 12:12:57 GMT
+      Location:
+      - https://panoptes-staging.zooniverse.org/api/subject_sets/3769
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 63281755-fc79-4ba5-b331-e393aa139ef3
+      X-Runtime:
+      - '0.202529'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '672'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subject_sets":[{"id":"3769","display_name":"panoptes-client.rb 1465992776","set_member_subjects_count":0,"metadata":{},"created_at":"2016-06-15T12:12:57.292Z","updated_at":"2016-06-15T12:12:57.292Z","href":"/subject_sets/3769","links":{"project":"813"}}],"links":{"subject_sets.project":{"href":"/projects/{subject_sets.project}","type":"projects"},"subject_sets.workflows":{"href":"/workflows?subject_set_id={subject_sets.id}","type":"workflows"}},"meta":{"subject_sets":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/subject_sets","previous_href":null,"next_href":null,"last_href":"/subject_sets"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 12:12:57 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/subject_sets/3769
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 12:12:58 GMT
+      Etag:
+      - '"23210b59a577ce5eda67b486f2551540"'
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - f1027273-aace-44d8-a1f6-5831f1a18d71
+      X-Runtime:
+      - '0.113103'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '688'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subject_sets":[{"id":"3769","display_name":"panoptes-client.rb 1465992776","set_member_subjects_count":0,"metadata":{},"created_at":"2016-06-15T12:12:57.292Z","updated_at":"2016-06-15T12:12:57.292Z","href":"/subject_sets/3769","links":{"project":"813"}}],"links":{"subject_sets.project":{"href":"/projects/{subject_sets.project}","type":"projects"},"subject_sets.workflows":{"href":"/workflows?subject_set_id={subject_sets.id}","type":"workflows"}},"meta":{"subject_sets":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/subject_sets?id=3769","previous_href":null,"next_href":null,"last_href":"/subject_sets?id=3769"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 12:12:58 GMT
+- request:
+    method: put
+    uri: https://panoptes-staging.zooniverse.org/api/subject_sets/3769
+    body:
+      encoding: UTF-8
+      string: '{"subject_sets":{"links":{"subjects":[3156]}}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      If-Match:
+      - '"23210b59a577ce5eda67b486f2551540"'
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 12:12:58 GMT
+      Last-Modified:
+      - Wed, 15 Jun 2016 12:12:57 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - e506be90-e49e-45ae-8176-a8952d6ff66f
+      X-Runtime:
+      - '0.179624'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '673'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subject_sets":[{"id":"3769","display_name":"panoptes-client.rb 1465992776","set_member_subjects_count":-1,"metadata":{},"created_at":"2016-06-15T12:12:57.292Z","updated_at":"2016-06-15T12:12:57.292Z","href":"/subject_sets/3769","links":{"project":"813"}}],"links":{"subject_sets.project":{"href":"/projects/{subject_sets.project}","type":"projects"},"subject_sets.workflows":{"href":"/workflows?subject_set_id={subject_sets.id}","type":"workflows"}},"meta":{"subject_sets":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/subject_sets","previous_href":null,"next_href":null,"last_href":"/subject_sets"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 12:12:58 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/subjects?subject_set_id=3769
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 12:12:59 GMT
+      Etag:
+      - '"3f69795e6f793e020d9ca1174aefef2f"'
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 79beebb0-579f-4f0a-8799-2eb63cd8ddce
+      X-Runtime:
+      - '0.112793'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '772'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subjects":[{"id":"3156","metadata":{"Filename":"800px-Catrinas_2.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/d96c3f10-a065-45fb-94fa-2617ae37ca13.jpeg"}],"zooniverse_id":null,"created_at":"2015-04-13T15:07:40.177Z","updated_at":"2015-04-13T15:07:40.177Z","href":"/subjects/3156","links":{"project":"231","collections":["110","10","22","109"]}}],"links":{"subjects.project":{"href":"/projects/{subjects.project}","type":"projects"},"subjects.collections":{"href":"/collections?subject_id={subjects.id}","type":"collections"}},"meta":{"subjects":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/subjects","previous_href":null,"next_href":null,"last_href":"/subjects"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 12:12:59 GMT
+recorded_with: VCR 3.0.1

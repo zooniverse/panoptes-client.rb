@@ -57,13 +57,19 @@ module Panoptes
       handle_response(response)
     end
 
-    def put(path, body = {})
-      response = conn.put("/api" + path, body)
+    def put(path, body = {}, etag: nil)
+      headers = {}
+      headers["If-Match"] = etag if etag
+
+      response = conn.put("/api" + path, body, headers)
       handle_response(response)
     end
 
-    def patch(path, body = {})
-      response = conn.patch("/api" + path, body)
+    def patch(path, body = {}, etag: nil)
+      headers = {}
+      headers["If-Match"] = etag if etag
+
+      response = conn.patch("/api" + path, body, headers)
       handle_response(response)
     end
 
