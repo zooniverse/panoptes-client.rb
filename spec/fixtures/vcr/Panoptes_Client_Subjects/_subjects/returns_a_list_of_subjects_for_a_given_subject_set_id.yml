@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/subjects?subject_set_id=2376
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 11:54:14 GMT
+      Etag:
+      - '"acc16672498b3b8968a7ff82fc47f594"'
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 90b79a19-7534-46ae-8e19-5b11a2c7ae76
+      X-Runtime:
+      - '0.217224'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '3350'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subjects":[{"id":"3156","metadata":{"Filename":"800px-Catrinas_2.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/d96c3f10-a065-45fb-94fa-2617ae37ca13.jpeg"}],"zooniverse_id":null,"created_at":"2015-04-13T15:07:40.177Z","updated_at":"2015-04-13T15:07:40.177Z","href":"/subjects/3156","links":{"project":"231","collections":["110","10","22","109"]}},{"id":"3157","metadata":{"Source":"Wikipedia","Filename":"Suushi_Yurei.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/38f90978-7db4-4357-8116-49d93fd7f868.jpeg"}],"zooniverse_id":null,"created_at":"2015-04-13T15:08:36.233Z","updated_at":"2015-04-13T15:08:36.233Z","href":"/subjects/3157","links":{"project":"231","collections":["10"]}},{"id":"3158","metadata":{"Source":"Wikipedia","Filename":"Brown_lady.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/f8f5c318-6ed5-4d53-a557-7451fdb9c459.jpeg"}],"zooniverse_id":null,"created_at":"2015-04-13T15:08:38.183Z","updated_at":"2015-04-13T15:08:38.183Z","href":"/subjects/3158","links":{"project":"231","collections":["140","68"]}},{"id":"3159","metadata":{"Source":"Wikipedia","Filename":"800px-Catrinas_2.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/95033f29-63d4-496a-b65d-6aaeccd84adf.jpeg"}],"zooniverse_id":null,"created_at":"2015-04-13T15:08:38.958Z","updated_at":"2015-04-13T15:08:38.958Z","href":"/subjects/3159","links":{"project":"231","collections":["146","69","72"]}},{"id":"11932","metadata":{"filename":"1280px-Scrooges_third_visitor-John_Leech,1843.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/b6146134-1c1d-4fe6-845e-236c28f77a1c.jpeg"}],"zooniverse_id":null,"created_at":"2015-05-06T20:33:58.009Z","updated_at":"2015-05-06T20:33:58.009Z","href":"/subjects/11932","links":{"project":"231","collections":["146"]}},{"id":"11933","metadata":{"filename":"Hammersmith_Ghost.PNG"},"locations":[{"image/png":"https://panoptes-uploads.zooniverse.org/231/0/6b0cf668-4e12-4a51-8d90-2a9fe71c0dbb.png"}],"zooniverse_id":null,"created_at":"2015-05-06T20:33:59.067Z","updated_at":"2015-05-06T20:33:59.067Z","href":"/subjects/11933","links":{"project":"231","collections":["98","109"]}},{"id":"11934","metadata":{"filename":"Suushi_Yurei.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/d8c19a24-6a3c-47c7-8684-cb4aa5a5c1d5.jpeg"}],"zooniverse_id":null,"created_at":"2015-05-06T20:34:03.722Z","updated_at":"2015-05-06T20:34:03.722Z","href":"/subjects/11934","links":{"project":"231","collections":["6","10"]}},{"id":"11937","metadata":{"filename":"Suushi_Yurei.jpg"},"locations":[{"image/jpeg":"https://panoptes-uploads.zooniverse.org/231/0/7ab15b82-62e1-4039-8916-fe29b4518679.jpeg"}],"zooniverse_id":null,"created_at":"2015-05-06T20:34:22.648Z","updated_at":"2015-05-06T20:34:22.648Z","href":"/subjects/11937","links":{"project":"231","collections":["55","10"]}}],"links":{"subjects.project":{"href":"/projects/{subjects.project}","type":"projects"},"subjects.collections":{"href":"/collections?subject_id={subjects.id}","type":"collections"}},"meta":{"subjects":{"page":1,"page_size":20,"count":8,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/subjects","previous_href":null,"next_href":null,"last_href":"/subjects"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 11:54:14 GMT
+recorded_with: VCR 3.0.1
