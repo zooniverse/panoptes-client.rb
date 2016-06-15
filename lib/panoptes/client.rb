@@ -6,6 +6,7 @@ require "panoptes/client/version"
 require "panoptes/client/me"
 require "panoptes/client/projects"
 require "panoptes/client/subjects"
+require "panoptes/client/subject_sets"
 require "panoptes/client/user_groups"
 
 module Panoptes
@@ -18,6 +19,7 @@ module Panoptes
     include Panoptes::Client::Me
     include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
+    include Panoptes::Client::SubjectSets
     include Panoptes::Client::UserGroups
 
     # A client is the main interface to the API.
