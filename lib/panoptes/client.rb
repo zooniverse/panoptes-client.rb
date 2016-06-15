@@ -105,7 +105,7 @@ module Panoptes
       when 404
         raise ResourceNotFound, status: response.status, body: response.body
       when 400..600
-        raise ServerError.new(response)
+        raise ServerError.new(response.body)
       else
         response.body
       end
