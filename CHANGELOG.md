@@ -1,3 +1,14 @@
+# 0.2.6
+
+* Add `client.workflow` to fetch a specific workflow.
+* Add `client.create_workflow`
+* Add `client.subjects` to fetch a list of subjects given filters
+* Add `client.subject_set` to fetch a specific subject set
+* Add `client.create_subject_set`
+* Add `client.update_subject_set`
+* Add `client.add_subjects_to_subject_set`
+* ServerErrors will now have the error message in the exception message
+
 # 0.2.5
 
 * Add `client.remove_user_from_user_group` that can be used by group admins to remove some other user from a group.
