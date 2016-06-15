@@ -6,7 +6,9 @@ require "panoptes/client/version"
 require "panoptes/client/me"
 require "panoptes/client/projects"
 require "panoptes/client/subjects"
+require "panoptes/client/subject_sets"
 require "panoptes/client/user_groups"
+require "panoptes/client/workflows"
 
 module Panoptes
   class Client
@@ -18,7 +20,9 @@ module Panoptes
     include Panoptes::Client::Me
     include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
+    include Panoptes::Client::SubjectSets
     include Panoptes::Client::UserGroups
+    include Panoptes::Client::Workflows
 
     # A client is the main interface to the API.
     #
@@ -53,13 +57,19 @@ module Panoptes
       handle_response(response)
     end
 
-    def put(path, body = {})
-      response = conn.put("/api" + path, body)
+    def put(path, body = {}, etag: nil)
+      headers = {}
+      headers["If-Match"] = etag if etag
+
+      response = conn.put("/api" + path, body, headers)
       handle_response(response)
     end
 
-    def patch(path, body = {})
-      response = conn.patch("/api" + path, body)
+    def patch(path, body = {}, etag: nil)
+      headers = {}
+      headers["If-Match"] = etag if etag
+
+      response = conn.patch("/api" + path, body, headers)
       handle_response(response)
     end
 
@@ -101,7 +111,7 @@ module Panoptes
       when 404
         raise ResourceNotFound, status: response.status, body: response.body
       when 400..600
-        raise ServerError.new(response)
+        raise ServerError.new(response.body)
       else
         response.body
       end

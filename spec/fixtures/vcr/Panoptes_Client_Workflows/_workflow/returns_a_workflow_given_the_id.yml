@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/workflows/1364
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 08:25:27 GMT
+      Etag:
+      - '"bcd5f34aa8e252e8bfffe696d9719a22"'
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 9dc8bc77-309e-48d2-9935-f1cc2de3e3fa
+      X-Runtime:
+      - '0.185065'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1819'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"workflows":[{"id":"1364","display_name":"Untitled workflow","tasks":{"T1":{"help":"","type":"single","answers":[{"next":"T2","label":"Yes"},{"label":"No"}],"question":"Would
+        you like to draw something?","required":true},"T2":{"help":"","type":"drawing","tools":[],"instruction":"Explain
+        what to draw."},"init":{"type":"single","answers":[{"label":"Yes"}],"question":"Is
+        this a question?"}},"classifications_count":1,"subjects_count":8,"created_at":"2015-06-26T13:42:41.886Z","updated_at":"2015-12-10T16:24:28.320Z","finished_at":null,"first_task":"init","primary_language":"en","version":"5.9","content_language":"en","prioritized":false,"grouped":false,"pairwise":false,"retirement":{"options":{"count":6},"criteria":"classification_count"},"retired_set_member_subjects_count":0,"href":"/workflows/1364","active":true,"aggregation":{},"configuration":{},"public_gold_standard":false,"completeness":0.0208333333333333,"links":{"project":"813","subject_sets":["2376"],"expert_subject_sets":["2376"],"attached_images":{"href":"/workflows/1364/attached_images","type":"attached_images"}}}],"links":{"workflows.project":{"href":"/projects/{workflows.project}","type":"projects"},"workflows.subject_sets":{"href":"/subject_sets?workflow_id={workflows.id}","type":"subject_sets"},"workflows.tutorial_subject":{"href":"/subjects/{workflows.tutorial_subject}","type":"tutorial_subjects"},"workflows.attached_images":{"href":"/workflows/{workflows.id}/attached_images","type":"media"},"workflows.expert_subject_set":{"href":"/subject_sets?workflow_id={workflows.id}","type":"expert_subject_sets"}},"meta":{"workflows":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/workflows?id=1364","previous_href":null,"next_href":null,"last_href":"/workflows?id=1364"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Jun 2016 08:25:27 GMT
+recorded_with: VCR 3.0.1
