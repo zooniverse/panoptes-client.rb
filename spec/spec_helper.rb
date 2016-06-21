@@ -17,6 +17,7 @@ VCR.configure do |config|
 end
 
 def test_url;           ENV.fetch("ZOONIVERSE_URL",           'https://panoptes-staging.zooniverse.org'); end
+def test_talk_url;      ENV.fetch("ZOONIVERSE_TALK_URL",      'https://talk-staging.zooniverse.org'); end
 def test_access_token;  ENV.fetch("ZOONIVERSE_ACCESS_TOKEN",  'x'*64); end
 def test_client_id;     ENV.fetch("ZOONIVERSE_CLIENT_ID",     'x'*64); end
 def test_client_secret; ENV.fetch("ZOONIVERSE_CLIENT_SECRET", 'x'*64); end
@@ -33,6 +34,14 @@ def user_client
   Panoptes::Client.new(url: test_url, auth: {token: test_access_token})
 end
 
+def talk_client
+  Panoptes::TalkClient.new(url: test_talk_url)
+end
+
 def api_url(path)
   test_url + "/api" + path
+end
+
+def talk_api_url(path)
+  test_talk_url + path
 end
