@@ -27,11 +27,19 @@ def unauthenticated_client
 end
 
 def application_client
-  Panoptes::Client.new(url: test_url, auth: {client_id: test_client_id, client_secret: test_client_secret})
+  Panoptes::Client.new(
+    url: test_url,
+    auth_url: test_url,
+    auth: { client_id: test_client_id, client_secret: test_client_secret }
+  )
 end
 
 def user_client
-  Panoptes::Client.new(url: test_url, auth: {token: test_access_token})
+  Panoptes::Client.new(
+    url: test_url,
+    auth_url: test_url,
+    auth: { token: test_access_token }
+  )
 end
 
 def talk_client
