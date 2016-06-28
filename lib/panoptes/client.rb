@@ -1,8 +1,4 @@
-require 'faraday'
-require 'faraday_middleware'
-require 'faraday/panoptes'
-
-require "panoptes/client/version"
+require "panoptes/concerns/common_client"
 require "panoptes/client/me"
 require "panoptes/client/projects"
 require "panoptes/client/subjects"
@@ -17,35 +13,13 @@ module Panoptes
     class ResourceNotFound < GenericError; end
     class ServerError < GenericError; end
 
+    include Panoptes::CommonClient
     include Panoptes::Client::Me
     include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
     include Panoptes::Client::SubjectSets
     include Panoptes::Client::UserGroups
     include Panoptes::Client::Workflows
-
-    # A client is the main interface to the API.
-    #
-    # @param auth [Hash] Authentication details
-    #   * either nothing,
-    #   * a hash with +:token+ (an existing OAuth user token),
-    #   * or a hash with +:client_id+ and +:client_secret+ (a keypair for an OAuth Application).
-    # @param url [String] Optional override for the API location to use. Defaults to the official production environment.
-    def initialize(auth: {}, url: "https://panoptes.zooniverse.org")
-      @conn = Faraday.new(url: url) do |faraday|
-        case
-        when auth[:token]
-          faraday.request :panoptes_access_token, url: url, access_token: auth[:token]
-        when auth[:client_id] && auth[:client_secret]
-          faraday.request :panoptes_client_credentials, url: url, client_id: auth[:client_id], client_secret: auth[:client_secret]
-        end
-
-        faraday.request :panoptes_api_v1
-        faraday.request :json
-        faraday.response :json
-        faraday.adapter Faraday.default_adapter
-      end
-    end
 
     def get(path, query = {})
       response = conn.get("/api" + path, query)
