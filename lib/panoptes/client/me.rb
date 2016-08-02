@@ -1,3 +1,6 @@
+require 'openssl'
+require 'jwt'
+
 module Panoptes
   class Client
     module Me

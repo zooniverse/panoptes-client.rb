@@ -4,6 +4,7 @@ require 'panoptes-client'
 
 require 'webmock/rspec'
 require 'vcr'
+require 'timecop'
 require 'pry'
 
 VCR.configure do |config|
@@ -38,6 +39,7 @@ def user_client
   Panoptes::Client.new(
     url: test_url,
     auth_url: test_url,
+    public_key_path: File.expand_path("../../data/doorkeeper-jwt-staging.pub", __FILE__),
     auth: { token: test_access_token }
   )
 end

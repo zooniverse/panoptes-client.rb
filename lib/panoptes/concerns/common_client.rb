@@ -8,6 +8,7 @@ module Panoptes
   module CommonClient
     PROD_API_URL = "https://panoptes.zooniverse.org".freeze
     PROD_TALK_API_URL = "https://talk.zooniverse.org".freeze
+    PROD_PUBLIC_KEY_PATH = File.expand_path("../../../../data/doorkeeper-jwt-production.pub", __FILE__)
 
     # A client is the main interface to the API.
     #
@@ -17,7 +18,9 @@ module Panoptes
     #   * or a hash with +:client_id+ and +:client_secret+ (a keypair for an OAuth Application).
     # @param url [String] API location to use.
     # @param auth_url [String] Auth API location to use.
-    def initialize(auth: {}, url: PROD_API_URL, auth_url: PROD_API_URL)
+    def initialize(auth: {}, url: PROD_API_URL, auth_url: PROD_API_URL, public_key_path: PROD_PUBLIC_KEY_PATH)
+      @auth = auth
+      @public_key_path = public_key_path
       @conn = Faraday.new(url: url) do |faraday|
         case
         when auth[:token]
@@ -36,6 +39,17 @@ module Panoptes
         faraday.response :json
         faraday.adapter Faraday.default_adapter
       end
+    end
+
+    def jwt
+      raise Panoptes::Client::NotLoggedIn unless @auth[:token]
+
+      payload, header = JWT.decode @auth[:token], jwt_signing_public_key, {algorithm: 'RS512'}
+      payload.fetch("data")
+    end
+
+    def jwt_signing_public_key
+      @jwt_signing_public_key ||= OpenSSL::PKey::RSA.new(File.read(@public_key_path))
     end
 
     # Get a path and perform automatic depagination

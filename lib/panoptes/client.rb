@@ -12,6 +12,7 @@ module Panoptes
     class ConnectionFailed < GenericError; end
     class ResourceNotFound < GenericError; end
     class ServerError < GenericError; end
+    class NotLoggedIn < GenericError; end
 
     include Panoptes::CommonClient
     include Panoptes::Client::Me
