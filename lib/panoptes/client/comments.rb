@@ -9,7 +9,7 @@ module Panoptes
       def create_comment(discussion_id:, body:)
         user_id = jwt.fetch("id")
         response = post("/comments", comments: {discussion_id: discussion_id, body: body, user_id: user_id})
-        response.fetch("discussions")
+        response.fetch("comments")[0]
       end
     end
   end
