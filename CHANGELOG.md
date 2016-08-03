@@ -1,3 +1,9 @@
+# 0.2.7
+
+* Add `TalkClient` to interact with the talk api.
+* Add `client.discussions` to fetch talk discussions for a focus object.
+* Refactored the client connection code for re-use between talk and panoptes clients.
+
 # 0.2.6
 
 * Add `client.workflow` to fetch a specific workflow.
