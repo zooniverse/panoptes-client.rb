@@ -31,7 +31,7 @@ def fake_public_key_path
 end
 
 def fake_access_token
-  JWT.encode({"id" => 1323869}, fake_keypair, 'RS512')
+  JWT.encode({"data" => {"id" => 1323869}}, fake_keypair, 'RS512')
 end
 
 def test_url;           ENV.fetch("ZOONIVERSE_URL",             'https://panoptes-staging.zooniverse.org'); end
