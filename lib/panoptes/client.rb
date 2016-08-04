@@ -1,20 +1,19 @@
 require "panoptes/concerns/common_client"
+
+require "panoptes/endpoints/panoptes_endpoint"
+require "panoptes/endpoints/talk_endpoint"
+
+require "panoptes/client/comments"
+require "panoptes/client/discussions"
 require "panoptes/client/me"
 require "panoptes/client/projects"
-require "panoptes/client/subjects"
 require "panoptes/client/subject_sets"
+require "panoptes/client/subjects"
 require "panoptes/client/user_groups"
 require "panoptes/client/workflows"
 
 module Panoptes
   class Client
-    class GenericError < StandardError; end
-    class ConnectionFailed < GenericError; end
-    class ResourceNotFound < GenericError; end
-    class ServerError < GenericError; end
-    class NotLoggedIn < GenericError; end
-
-    include Panoptes::CommonClient
     include Panoptes::Client::Me
     include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
@@ -22,73 +21,51 @@ module Panoptes
     include Panoptes::Client::UserGroups
     include Panoptes::Client::Workflows
 
-    def get(path, query = {})
-      response = conn.get("/api" + path, query)
-      handle_response(response)
+    include Panoptes::Client::Discussions
+    include Panoptes::Client::Comments
+
+    class GenericError < StandardError; end
+    class ConnectionFailed < GenericError; end
+    class ResourceNotFound < GenericError; end
+    class ServerError < GenericError; end
+    class NotLoggedIn < GenericError; end
+
+    attr_reader :env, :auth, :panoptes, :talk
+
+    def initialize(env: :production, auth: {}, public_key_path: nil)
+      @env = env
+      @auth = auth
+      @public_key_path = public_key_path
+      @panoptes = Panoptes::Endpoints::PanoptesEndpoint.new(auth: auth, url: panoptes_url)
+      @talk = Panoptes::Endpoints::TalkEndpoint.new(auth: auth, url: talk_url)
     end
 
-    def post(path, body = {})
-      response = conn.post("/api" + path, body)
-      handle_response(response)
+    def current_user
+      raise NotLoggedIn unless @auth[:token]
+
+      payload, header = JWT.decode @auth[:token], jwt_signing_public_key, {algorithm: 'RS512'}
+      payload.fetch("data")
     end
 
-    def put(path, body = {}, etag: nil)
-      headers = {}
-      headers["If-Match"] = etag if etag
-
-      response = conn.put("/api" + path, body, headers)
-      handle_response(response)
+    def jwt_signing_public_key
+      @jwt_signing_public_key ||= OpenSSL::PKey::RSA.new(File.read(@public_key_path))
     end
 
-    def patch(path, body = {}, etag: nil)
-      headers = {}
-      headers["If-Match"] = etag if etag
-
-      response = conn.patch("/api" + path, body, headers)
-      handle_response(response)
-    end
-
-    def delete(path, query = {}, etag: nil)
-      headers = {}
-      headers["If-Match"] = etag if etag
-
-      response = conn.delete("/api" + path, query, headers)
-      handle_response(response)
-    end
-
-    # Get a path and perform automatic depagination
-    def paginate(path, query, resource: nil)
-      resource = path.split("/").last if resource.nil?
-      data = last_response = get(path, query)
-
-      while next_path = last_response["meta"][resource]["next_href"]
-        last_response = get(next_path, query)
-        if block_given?
-          yield data, last_response
-        else
-          data[resource].concat(last_response[resource]) if data[resource].is_a?(Array)
-          data["meta"][resource].merge!(last_response["meta"][resource])
-          data["links"].merge!(last_response["links"])
-        end
-      end
-
-      data
-    end
-
-    private
-
-    def conn
-      @conn
-    end
-
-    def handle_response(response)
-      case response.status
-      when 404
-        raise ResourceNotFound, status: response.status, body: response.body
-      when 400..600
-        raise ServerError.new(response.body)
+    def panoptes_url
+      case env
+      when :production, "production".freeze
+        "https://panoptes.zooniverse.org".freeze
       else
-        response.body
+        "https://panoptes-staging.zooniverse.org".freeze
+      end
+    end
+
+    def talk_url
+      case env
+      when :production, "production".freeze
+        "https://talk.zooniverse.org".freeze
+      else
+        "https://talk-staging.zooniverse.org".freeze
       end
     end
   end

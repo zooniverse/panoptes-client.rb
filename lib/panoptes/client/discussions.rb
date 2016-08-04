@@ -11,7 +11,7 @@ module Panoptes
         query[:focus_id] = focus_id
         query[:focus_type] = focus_type
 
-        response = get("/discussions", query)
+        response = talk.get("/discussions", query)
         response.fetch("discussions")
       end
     end

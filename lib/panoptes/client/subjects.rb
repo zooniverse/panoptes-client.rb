@@ -9,7 +9,7 @@ module Panoptes
         query = {}
         query[:subject_set_id] = subject_set_id
 
-        response = get("/subjects", query)
+        response = panoptes.get("/subjects", query)
         response.fetch("subjects")
       end
 
@@ -20,7 +20,7 @@ module Panoptes
       # @param subject_id  [Integer] the ID of a subject associated with that workflow (through one of the assigned subject_sets)
       # @return nothing
       def retire_subject(workflow_id, subject_id, reason: nil)
-        post("/workflows/#{workflow_id}/retired_subjects", {
+        panoptes.post("/workflows/#{workflow_id}/retired_subjects", {
           admin: true,
           subject_id: subject_id,
           retirement_reason: reason
