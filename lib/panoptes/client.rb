@@ -1,5 +1,3 @@
-require "panoptes/concerns/common_client"
-
 require "panoptes/endpoints/panoptes_endpoint"
 require "panoptes/endpoints/talk_endpoint"
 
