@@ -1,3 +1,9 @@
+# next
+
+* Merged Client and TalkClient: `client.discussions` is now just on Client. TalkClient is still present as an alias for Client
+* Add `client.create_comment` to post a comment in a talk discussions
+* Add `client.current_user` to get information contained in the authentication token, if given
+
 # 0.2.7
 
 * Add `TalkClient` to interact with the talk api.

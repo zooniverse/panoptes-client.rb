@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://talk-staging.zooniverse.org/comments
+    body:
+      encoding: UTF-8
+      string: '{"comments":{"discussion_id":165,"body":"Hello from panoptes-client.rb
+        1470146174","user_id":1323869}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 02 Aug 2016 13:56:15 GMT
+      Etag:
+      - W/"9dd2931c3bcad0b8deceae0b0686e1ee"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 21d8cee0-8d01-4d75-ac14-3cc52b4a624c
+      X-Runtime:
+      - '0.225251'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1630'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"comments":[{"href":"/comments/1027","links":{},"board_id":"38","body":"Hello
+        from panoptes-client.rb 1470146174","category":null,"created_at":"2016-08-02T13:56:15.322Z","discussion_id":"165","focus_id":"","focus_type":null,"group_mentioning":{},"id":"1027","is_deleted":false,"mentioning":{},"project_id":"","reply_id":"","section":"zooniverse","tagging":{},"updated_at":"2016-08-02T13:56:15.322Z","upvotes":{},"user_id":"1323869","user_login":"martenzooniverse","versions":[],"reply_user_id":null,"reply_user_login":null,"reply_user_display_name":null,"discussion_comments_count":15,"discussion_subject_default":false,"discussion_title":"Title
+        Test","discussion_updated_at":"2016-08-02T13:56:15.452Z","discussion_users_count":2,"discussion_focus_id":"","discussion_focus_type":null,"discussion_locked":false,"board_comments_count":101,"board_description":"Chat
+        with the zooniverse","board_discussions_count":15,"board_parent_id":"","board_subject_default":false,"board_title":"Chat","board_users_count":14,"board_permissions":{"read":"all","write":"all"},"project_slug":null,"moderatable_actions":["report"],"user_display_name":"martenzooniverse"}],"meta":{"comments":{"page":1,"page_size":10,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/comments?board_id=38\u0026discussion_id=165\u0026id=1027\u0026section=zooniverse\u0026user_id=1323869","previous_href":null,"next_href":null,"last_href":"/comments?board_id=38\u0026discussion_id=165\u0026id=1027\u0026section=zooniverse\u0026user_id=1323869","current_sort":"","default_sort":"created_at","sortable_attributes":["created_at"]}}}'
+    http_version: 
+  recorded_at: Tue, 02 Aug 2016 13:56:15 GMT
+recorded_with: VCR 3.0.1

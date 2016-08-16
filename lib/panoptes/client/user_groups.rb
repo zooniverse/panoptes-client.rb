@@ -7,31 +7,31 @@ module Panoptes
       # @param name [String] The name of the user group. Must be unique for the entirity of Zooniverse.
       # @return [Hash] The created user group.
       def create_user_group(name)
-        post("/user_groups", user_groups: {
+        panoptes.post("/user_groups", user_groups: {
           name: name
         })["user_groups"][0]
       end
 
       def user_groups
-        get("/user_groups")["user_groups"]
+        panoptes.get("/user_groups")["user_groups"]
       end
 
       def join_user_group(user_group_id, user_id, join_token:)
-        post("/memberships", memberships: {
+        panoptes.post("/memberships", memberships: {
           join_token: join_token,
           links: {user: user_id, user_group: user_group_id}
         })["memberships"][0]
       end
 
       def remove_user_from_user_group(user_group_id, user_id)
-        delete("/user_groups/#{user_group_id}/links/users/#{user_id}")
+        panoptes.delete("/user_groups/#{user_group_id}/links/users/#{user_id}")
       end
 
       def delete_user_group(user_group_id)
-        response = conn.get("/api/user_groups/#{user_group_id}")
+        response = panoptes.connection.get("/api/user_groups/#{user_group_id}")
         etag = response.headers["ETag"]
 
-        delete("/user_groups/#{user_group_id}", {}, etag: etag)
+        panoptes.delete("/user_groups/#{user_group_id}", {}, etag: etag)
       end
     end
   end
