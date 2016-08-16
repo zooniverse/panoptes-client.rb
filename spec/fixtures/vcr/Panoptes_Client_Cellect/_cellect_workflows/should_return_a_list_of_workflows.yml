@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/cellect/workflows
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Aug 2016 16:23:34 GMT
+      Etag:
+      - W/"84adf683d79c8d0b56dc3efd26b8efea"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - f8b4d1f1-3bb1-442f-ae44-ea9c7cf8ea7b
+      X-Runtime:
+      - '1.557902'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1749'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"workflows":[{"id":985,"pairwise":false,"prioritized":false,"grouped":false},{"id":987,"pairwise":false,"prioritized":false,"grouped":false},{"id":988,"pairwise":false,"prioritized":false,"grouped":false},{"id":1201,"pairwise":false,"prioritized":false,"grouped":false},{"id":981,"pairwise":false,"prioritized":false,"grouped":false},{"id":590,"pairwise":false,"prioritized":false,"grouped":false},{"id":1095,"pairwise":false,"prioritized":false,"grouped":false},{"id":649,"pairwise":false,"prioritized":false,"grouped":false},{"id":1055,"pairwise":false,"prioritized":false,"grouped":false},{"id":591,"pairwise":false,"prioritized":false,"grouped":false},{"id":979,"pairwise":false,"prioritized":false,"grouped":false},{"id":587,"pairwise":false,"prioritized":false,"grouped":false},{"id":986,"pairwise":false,"prioritized":false,"grouped":false},{"id":594,"pairwise":false,"prioritized":false,"grouped":false},{"id":643,"pairwise":false,"prioritized":false,"grouped":false},{"id":1039,"pairwise":false,"prioritized":false,"grouped":false},{"id":588,"pairwise":false,"prioritized":false,"grouped":false},{"id":693,"pairwise":false,"prioritized":false,"grouped":false},{"id":1113,"pairwise":false,"prioritized":false,"grouped":false},{"id":1102,"pairwise":false,"prioritized":false,"grouped":false},{"id":945,"pairwise":false,"prioritized":false,"grouped":false},{"id":648,"pairwise":false,"prioritized":false,"grouped":false},{"id":1122,"pairwise":false,"prioritized":false,"grouped":false},{"id":1112,"pairwise":false,"prioritized":false,"grouped":false},{"id":628,"pairwise":false,"prioritized":false,"grouped":false},{"id":611,"pairwise":false,"prioritized":false,"grouped":true},{"id":72,"pairwise":false,"prioritized":false,"grouped":false}]}'
+    http_version: 
+  recorded_at: Tue, 16 Aug 2016 16:23:34 GMT
+recorded_with: VCR 3.0.3
