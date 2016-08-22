@@ -7,13 +7,15 @@ module Panoptes
     class BaseEndpoint
       attr_reader :auth, :url, :prefix
 
-      # @param auth [Hash] Authentication details
+      # @param auth [Hash<token: String, client_id: String, client_secret: String>] Authentication details
       #   * either nothing,
       #   * a hash with +:token+ (an existing OAuth user token),
       #   * or a hash with +:client_id+ and +:client_secret+
       #     (a keypair for an OAuth Application).
       # @param url [String] API location to use.
-      # @param auth_url [String] Auth API location to use.
+      # @param prefix [String] An optional API url prefix
+      # @yield Allows an optional block to configure the faraday connection
+      # @yieldparam faraday [Faraday::Connection] The faraday connection
       def initialize(auth: {}, url: nil, prefix: nil, &config)
         @auth = auth
         @url = url
