@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/cellect/subjects?workflow_id=72
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 16 Aug 2016 16:23:34 GMT
+      Etag:
+      - W/"ecaa1fec628f60e8f1bb4e0016e971b4"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - bb83ddcc-bb6e-40f4-a628-25efcfe93732
+      X-Runtime:
+      - '0.081198'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '2252'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subjects":[{"id":139,"priority":null},{"id":132,"priority":null},{"id":167,"priority":null},{"id":166,"priority":null},{"id":165,"priority":null},{"id":164,"priority":null},{"id":163,"priority":null},{"id":162,"priority":null},{"id":161,"priority":null},{"id":160,"priority":null},{"id":159,"priority":null},{"id":158,"priority":null},{"id":157,"priority":null},{"id":156,"priority":null},{"id":155,"priority":null},{"id":154,"priority":null},{"id":153,"priority":null},{"id":152,"priority":null},{"id":151,"priority":null},{"id":150,"priority":null},{"id":149,"priority":null},{"id":148,"priority":null},{"id":147,"priority":null},{"id":146,"priority":null},{"id":145,"priority":null},{"id":144,"priority":null},{"id":143,"priority":null},{"id":142,"priority":null},{"id":141,"priority":null},{"id":140,"priority":null},{"id":138,"priority":null},{"id":137,"priority":null},{"id":136,"priority":null},{"id":135,"priority":null},{"id":134,"priority":null},{"id":133,"priority":null},{"id":131,"priority":null},{"id":130,"priority":null},{"id":129,"priority":null},{"id":128,"priority":null},{"id":127,"priority":null},{"id":126,"priority":null},{"id":125,"priority":null},{"id":124,"priority":null},{"id":123,"priority":null},{"id":121,"priority":null},{"id":120,"priority":null},{"id":119,"priority":null},{"id":117,"priority":null},{"id":116,"priority":null},{"id":114,"priority":null},{"id":113,"priority":null},{"id":109,"priority":null},{"id":102,"priority":null},{"id":111,"priority":null},{"id":99,"priority":null},{"id":98,"priority":null},{"id":100,"priority":null},{"id":107,"priority":null},{"id":118,"priority":null},{"id":110,"priority":null},{"id":112,"priority":null},{"id":115,"priority":null},{"id":108,"priority":null},{"id":122,"priority":null},{"id":103,"priority":null},{"id":105,"priority":null},{"id":101,"priority":null},{"id":104,"priority":null},{"id":106,"priority":null},{"id":97,"priority":null},{"id":278,"priority":null},{"id":279,"priority":null},{"id":280,"priority":null},{"id":281,"priority":null},{"id":282,"priority":null},{"id":291,"priority":null},{"id":292,"priority":null},{"id":293,"priority":null},{"id":294,"priority":null},{"id":296,"priority":null},{"id":297,"priority":null},{"id":298,"priority":null}]}'
+    http_version: 
+  recorded_at: Tue, 16 Aug 2016 16:23:34 GMT
+recorded_with: VCR 3.0.3
