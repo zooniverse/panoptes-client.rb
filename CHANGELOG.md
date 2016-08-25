@@ -1,8 +1,10 @@
-# next
+# 0.2.8
 
 * Merged Client and TalkClient: `client.discussions` is now just on Client. TalkClient is still present as an alias for Client
 * Add `client.create_comment` to post a comment in a talk discussions
 * Add `client.current_user` to get information contained in the authentication token, if given
+* Add `client.cellect_workflows` to get information on workflows using the cellect services
+* Add `client.cellect_subjects` to get subject information for a given cellect workflow
 
 # 0.2.7
 
