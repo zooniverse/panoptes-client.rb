@@ -7,7 +7,7 @@ module Panoptes
       # @see Panoptes::Endpoints::BaseEndpoint#initialize
       def initialize(auth: {}, url: nil, prefix: nil, &config)
         super auth: auth, url: url, prefix: prefix do |faraday|
-          config&.call faraday
+          config.call(faraday) if config
           faraday.request :json
           faraday.response :json
           faraday.adapter Faraday.default_adapter
