@@ -1,3 +1,7 @@
+# 0.2.9
+
+* Be compatible with JRuby
+
 # 0.2.8
 
 * Merged Client and TalkClient: `client.discussions` is now just on Client. TalkClient is still present as an alias for Client
