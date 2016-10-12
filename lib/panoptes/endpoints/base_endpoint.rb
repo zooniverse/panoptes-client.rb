@@ -64,9 +64,9 @@ module Panoptes
       def handle_response(response)
         case response.status
         when 404
-          raise ResourceNotFound, status: response.status, body: response.body
+          raise Panoptes::Client::ResourceNotFound, status: response.status, body: response.body
         when 400..600
-          raise ServerError.new, response.body
+          raise Panoptes::Client::ServerError.new, response.body
         else
           response.body
         end
