@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://panoptes-staging.zooniverse.org/api/collections/1234/links/subjects
+    body:
+      encoding: UTF-8
+      string: '{"subjects":[4567]}'
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJkYXRhIjp7ImlkIjoxMzIzODY5fX0.RDPbJrB18GD8EyqsFlIzBMnBsSpDQE1up_7yVV7hp0mi8pVHtCC8gWH6nLKL1RaLPK8_pHUbImCzrBCK4rZTskxQunMzsK3LxZtPmmqY14r_OdqIZly1W7mjUrxy-v_pA_Dnj15WCjEEdvj7F_q7jvg-PYRm9nTFFAVx2vBelbrYCTJzmj7IarWPlDfuigQzaSH2qbmACPfJ_V_73DxqCBDteKo73TJjdVG-n1nxJqM3QsDXqer1jhBigZhPXwFaqtabDG6vhdNq2oRILjP2ezpozLd09huKRwOzefsTVdYhsyK1Nk17mLmG9sYDb5vc10lGYKUrQailsk-v5CU_Xw
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Mon, 06 Feb 2017 16:43:12 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 1479d646-b63c-4e02-8357-e02da6ee198d
+      X-Runtime:
+      - '0.007823'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '67'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version:
+  recorded_at: Mon, 06 Feb 2017 16:43:12 GMT
+recorded_with: VCR 3.0.3
