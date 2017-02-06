@@ -9,6 +9,7 @@ require 'panoptes/client/projects'
 require 'panoptes/client/subject_sets'
 require 'panoptes/client/subjects'
 require 'panoptes/client/user_groups'
+require 'panoptes/client/version'
 require 'panoptes/client/workflows'
 
 module Panoptes
