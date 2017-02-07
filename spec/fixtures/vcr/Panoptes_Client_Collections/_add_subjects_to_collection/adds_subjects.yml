@@ -9,8 +9,6 @@ http_interactions:
     headers:
       User-Agent:
       - Faraday v0.11.0
-      Authorization:
-      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJkYXRhIjp7ImlkIjoxMzIzODY5fX0.RDPbJrB18GD8EyqsFlIzBMnBsSpDQE1up_7yVV7hp0mi8pVHtCC8gWH6nLKL1RaLPK8_pHUbImCzrBCK4rZTskxQunMzsK3LxZtPmmqY14r_OdqIZly1W7mjUrxy-v_pA_Dnj15WCjEEdvj7F_q7jvg-PYRm9nTFFAVx2vBelbrYCTJzmj7IarWPlDfuigQzaSH2qbmACPfJ_V_73DxqCBDteKo73TJjdVG-n1nxJqM3QsDXqer1jhBigZhPXwFaqtabDG6vhdNq2oRILjP2ezpozLd09huKRwOzefsTVdYhsyK1Nk17mLmG9sYDb5vc10lGYKUrQailsk-v5CU_Xw
       Accept:
       - application/vnd.api+json; version=1
       Content-Type:
