@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/classifications/project?admin=true&subject_id=1234&workflow_id=5678
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.11.0
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/html
+      Date:
+      - Wed, 08 Feb 2017 10:22:31 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Pragma:
+      - no-cache
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      Www-Authenticate:
+      - Bearer realm="Panoptes", error="invalid_token", error_description="The access
+        token is invalid"
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - fd946520-fe84-49f6-88d1-dac978e93644
+      X-Runtime:
+      - '0.007987'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"classifications": []}'
+    http_version:
+  recorded_at: Wed, 08 Feb 2017 10:22:31 GMT
+recorded_with: VCR 3.0.3

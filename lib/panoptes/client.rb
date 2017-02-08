@@ -2,6 +2,7 @@ require 'panoptes/endpoints/json_api_endpoint'
 require 'panoptes/endpoints/json_endpoint'
 
 require 'panoptes/client/cellect'
+require 'panoptes/client/classifications'
 require 'panoptes/client/collections'
 require 'panoptes/client/comments'
 require 'panoptes/client/discussions'
@@ -26,6 +27,7 @@ module Panoptes
     include Panoptes::Client::Comments
 
     include Panoptes::Client::Collections
+    include Panoptes::Client::Classifications
 
     include Panoptes::Client::Cellect
 
