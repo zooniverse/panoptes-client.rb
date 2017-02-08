@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://panoptes-staging.zooniverse.org/api/collections/1234/links/subjects
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/classifications/project?admin=true&subject_id=1234&workflow_id=5678
     body:
-      encoding: UTF-8
-      string: '{"subjects":[4567]}'
+      encoding: US-ASCII
+      string: ''
     headers:
       User-Agent:
       - Faraday v0.11.0
@@ -17,40 +17,45 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 201
-      message: Created
+      code: 200
+      message: OK
     headers:
       Cache-Control:
-      - no-cache
+      - no-store
       Content-Type:
-      - application/vnd.api+json; version=1; charset=utf-8
+      - text/html
       Date:
-      - Mon, 06 Feb 2017 16:43:12 GMT
+      - Wed, 08 Feb 2017 10:22:31 GMT
       P3p:
       - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Pragma:
+      - no-cache
       Server:
       - nginx/1.4.6 (Ubuntu)
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains
       Vary:
       - Origin
+      Www-Authenticate:
+      - Bearer realm="Panoptes", error="invalid_token", error_description="The access
+        token is invalid"
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 1479d646-b63c-4e02-8357-e02da6ee198d
+      - fd946520-fe84-49f6-88d1-dac978e93644
       X-Runtime:
-      - '0.007823'
+      - '0.007987'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '67'
+      - '0'
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: ''
+      string: '{"classifications": []}'
     http_version:
-  recorded_at: Mon, 06 Feb 2017 16:43:12 GMT
+  recorded_at: Wed, 08 Feb 2017 10:22:31 GMT
 recorded_with: VCR 3.0.3
