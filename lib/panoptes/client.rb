@@ -39,12 +39,12 @@ module Panoptes
 
     attr_reader :env, :auth, :panoptes, :talk, :cellect
 
-    def initialize(env: :production, auth: {}, public_key_path: nil)
+    def initialize(env: :production, auth: {}, public_key_path: nil, params: nil)
       @env = env
       @auth = auth
       @public_key_path = public_key_path
       @panoptes = Panoptes::Endpoints::JsonApiEndpoint.new(
-        auth: auth, url: panoptes_url, prefix: '/api'
+        auth: auth, url: panoptes_url, prefix: '/api', params: params
       )
       @talk = Panoptes::Endpoints::JsonApiEndpoint.new(
         auth: auth, url: talk_url
