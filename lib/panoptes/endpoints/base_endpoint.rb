@@ -5,7 +5,7 @@ require 'faraday/panoptes'
 module Panoptes
   module Endpoints
     class BaseEndpoint
-      attr_reader :auth, :url, :prefix
+      attr_reader :auth, :url, :prefix, :params
 
       # @param auth [Hash<token: String, client_id: String, client_secret: String>] Authentication details
       #   * either nothing,
@@ -16,11 +16,12 @@ module Panoptes
       # @param prefix [String] An optional API url prefix
       # @yield Allows an optional block to configure the faraday connection
       # @yieldparam faraday [Faraday::Connection] The faraday connection
-      def initialize(auth: {}, url: nil, prefix: nil, &config)
+      def initialize(auth: {}, url: nil, prefix: nil, params: nil, &config)
         @auth = auth
         @url = url
         @prefix = prefix
         @config = config
+        @params = params
       end
 
       def connection
@@ -82,6 +83,9 @@ module Panoptes
           faraday.request :json
           faraday.response :json
           faraday.adapter Faraday.default_adapter
+          if @params
+            faraday.params = @params
+          end
         end
       end
 
