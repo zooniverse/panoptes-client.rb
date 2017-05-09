@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "faraday"
-  spec.add_dependency "faraday-panoptes", "~> 0.2.0"
+  spec.add_dependency "faraday-panoptes", "~> 0.3.0"
   spec.add_dependency "jwt", "~> 1.5.0"
 
   spec.add_development_dependency "bundler", "~> 1.11"
