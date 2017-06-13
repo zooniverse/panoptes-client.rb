@@ -17,18 +17,21 @@ require 'panoptes/client/workflows'
 module Panoptes
   class Client
     include Panoptes::Client::Me
+
+    # Panoptes
+    include Panoptes::Client::Classifications
+    include Panoptes::Client::Collections
     include Panoptes::Client::Projects
     include Panoptes::Client::Subjects
     include Panoptes::Client::SubjectSets
     include Panoptes::Client::UserGroups
     include Panoptes::Client::Workflows
 
-    include Panoptes::Client::Discussions
+    # Talk
     include Panoptes::Client::Comments
+    include Panoptes::Client::Discussions
 
-    include Panoptes::Client::Collections
-    include Panoptes::Client::Classifications
-
+    # Cellect
     include Panoptes::Client::Cellect
 
     class GenericError < StandardError; end
@@ -39,12 +42,12 @@ module Panoptes
 
     attr_reader :env, :auth, :panoptes, :talk, :cellect
 
-    def initialize(env: :production, auth: {}, public_key_path: nil, params: nil)
+    def initialize(env: :production, auth: {}, public_key_path: nil)
       @env = env
       @auth = auth
-      @public_key_path = public_key_path
+      @public_key_path = public_key_path || public_key_for_env(env)
       @panoptes = Panoptes::Endpoints::JsonApiEndpoint.new(
-        auth: auth, url: panoptes_url, prefix: '/api', params: params
+        auth: auth, url: panoptes_url, prefix: '/api'
       )
       @talk = Panoptes::Endpoints::JsonApiEndpoint.new(
         auth: auth, url: talk_url
@@ -63,6 +66,17 @@ module Panoptes
 
     def jwt_signing_public_key
       @jwt_signing_public_key ||= OpenSSL::PKey::RSA.new(File.read(@public_key_path))
+    end
+
+    def public_key_for_env(env)
+      case env.to_s
+      when "staging"
+        File.expand_path(File.join("..", "..", "..", "data", "doorkeeper-jwt-staging.pub"), __FILE__)
+      when "production"
+        File.expand_path(File.join("..", "..", "..", "data", "doorkeeper-jwt-production.pub"), __FILE__)
+      else
+        nil
+      end
     end
 
     def panoptes_url
