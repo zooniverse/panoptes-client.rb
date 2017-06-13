@@ -1,3 +1,7 @@
+# 0.3.1
+
+* Automatically loads active public key (as of gem release)
+
 # 0.2.10
 
 * Fix bug with server errors
