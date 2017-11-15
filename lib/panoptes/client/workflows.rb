@@ -10,6 +10,10 @@ module Panoptes
         response = panoptes.post("/workflows", workflows: attributes)
         response.fetch("workflows").first
       end
+
+      def add_subject_set_to_workflow(workflow_id, subject_set_id)
+        panoptes.post("/workflows/#{workflow_id}/links/subject_sets",subject_sets: subject_set_id)
+      end
     end
   end
 end

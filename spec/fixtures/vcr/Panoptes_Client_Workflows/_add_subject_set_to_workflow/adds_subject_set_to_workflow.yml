@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://panoptes-staging.zooniverse.org/api/workflows/2882/links/subject_sets
+    body:
+      encoding: UTF-8
+      string: '{"subject_sets":4398}'
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Nov 2017 23:31:13 GMT
+      Last-Modified:
+      - Sun, 26 Mar 2017 21:29:15 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - f51bbadf-aeb2-42b5-8c9a-366f369607a9
+      X-Runtime:
+      - '0.102775'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '620'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"workflows":[{"id":"2882","display_name":"Default","tasks":{},"classifications_count":0,"subjects_count":0,"created_at":"2017-03-26T21:29:15.220Z","updated_at":"2017-03-26T21:29:15.220Z","finished_at":null,"first_task":"","primary_language":"en","version":"1.1","content_language":"en","prioritized":false,"grouped":false,"pairwise":false,"retirement":{"criteria":"classification_count","options":{"count":15}},"retired_set_member_subjects_count":0,"href":"/workflows/2882","active":true,"mobile_friendly":false,"aggregation":{},"nero_config":{},"configuration":{},"public_gold_standard":false,"completeness":0.0,"links":{"project":"1715","subject_sets":["4398"],"attached_images":{"href":"/workflows/2882/attached_images","type":"attached_images"},"classifications_export":{"href":"/workflows/2882/classifications_export","type":"classifications_exports"}}}],"links":{"workflows.project":{"href":"/projects/{workflows.project}","type":"projects"},"workflows.subject_sets":{"href":"/subject_sets?workflow_id={workflows.id}","type":"subject_sets"},"workflows.tutorial_subject":{"href":"/subjects/{workflows.tutorial_subject}","type":"tutorial_subjects"},"workflows.attached_images":{"href":"/workflows/{workflows.id}/attached_images","type":"media"},"workflows.classifications_export":{"href":"/workflows/{workflows.id}/classifications_export","type":"media"}},"meta":{"workflows":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/workflows","previous_href":null,"next_href":null,"last_href":"/workflows"}}}'
+    http_version: 
+  recorded_at: Wed, 15 Nov 2017 23:31:13 GMT
+recorded_with: VCR 3.0.3
