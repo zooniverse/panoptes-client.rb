@@ -26,4 +26,12 @@ describe Panoptes::Client::Workflows, :vcr do
       assert_requested :post, api_url('/workflows')
     end
   end
+
+  describe '#add_subject_set_to_workflow' do
+    let(:client) { user_client }
+    it 'adds subject set to workflow' do
+      client.add_subject_set_to_workflow(2882, 4398)
+      assert_requested :post, api_url("/workflows/2882/links/subject_sets")
+    end
+  end
 end
