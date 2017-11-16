@@ -6,8 +6,8 @@ require 'panoptes/client/version'
 Gem::Specification.new do |spec|
   spec.name          = "panoptes-client"
   spec.version       = Panoptes::Client::VERSION
-  spec.authors       = ["Marten Veldthuis"]
-  spec.email         = ["marten@veldthuis.com"]
+  spec.authors       = ['Marten Veldthuis', 'Zach Wolfenbarger', 'Amy Boyer']
+  spec.email         = ['marten@veldthuis.com', 'zach@zooniverse.org', 'amy@zooniverse.org']
 
   spec.summary       = %q{API wrapper for https://panoptes.zooniverse.org}
   spec.homepage      = "https://github.com/zooniverse/panoptes-client.rb"
