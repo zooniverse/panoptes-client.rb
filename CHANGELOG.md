@@ -1,3 +1,7 @@
+# 0.3.4
+
+* Add `client.add_subject_set_to_workflow`
+
 # 0.3.3
 
 * `client.get_subject_classifications` now paginates if there is more than one page
