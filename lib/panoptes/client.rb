@@ -60,7 +60,7 @@ module Panoptes
     def current_user
       raise NotLoggedIn unless @auth[:token]
 
-      payload = JWT.decode @auth[:token], jwt_signing_public_key, algorithm: 'RS512'
+      payload, = JWT.decode @auth[:token], jwt_signing_public_key, algorithm: 'RS512'
       payload.fetch('data')
     end
 
