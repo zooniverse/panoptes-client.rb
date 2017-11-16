@@ -1,3 +1,11 @@
+# 0.3.3
+
+* `client.get_subject_classifications` now paginates if there is more than one page
+
+# 0.3.2
+
+?
+
 # 0.3.1
 
 * Automatically loads active public key (as of gem release)
