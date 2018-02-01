@@ -8,8 +8,10 @@ require 'panoptes/client/comments'
 require 'panoptes/client/discussions'
 require 'panoptes/client/me'
 require 'panoptes/client/projects'
+require 'panoptes/client/project_preferences'
 require 'panoptes/client/subject_sets'
 require 'panoptes/client/subjects'
+require 'panoptes/client/users'
 require 'panoptes/client/user_groups'
 require 'panoptes/client/version'
 require 'panoptes/client/workflows'
@@ -22,8 +24,10 @@ module Panoptes
     include Panoptes::Client::Classifications
     include Panoptes::Client::Collections
     include Panoptes::Client::Projects
+    include Panoptes::Client::ProjectPreferences
     include Panoptes::Client::Subjects
     include Panoptes::Client::SubjectSets
+    include Panoptes::Client::Users
     include Panoptes::Client::UserGroups
     include Panoptes::Client::Workflows
 
