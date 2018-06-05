@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/projects/405
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Tue, 05 Jun 2018 21:29:25 GMT
+      Etag:
+      - W/"864ec62e83bff8536f1fd9dbc291ac90"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Cache-Status:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 673f29e1-4e2c-4875-82d2-fc05ad38b990
+      X-Runtime:
+      - '0.063761'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1208'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"projects":[{"id":"405","display_name":"Season Spotter BASIC Beta1","classifications_count":5414,"subjects_count":150,"created_at":"2015-05-01T01:21:58.010Z","updated_at":"2018-06-05T21:28:44.341Z","available_languages":["en"],"title":"Season
+        Spotter BASIC Beta1","description":"Keep an eye on changing seasons!","introduction":"Answer
+        multiple choice questions here, or try [answering questions and marking features](\nhttp://demo.zooniverse.org/seasons/#/projects/mkosmala/Season%20Spotter%20DETAILS%20Beta1/classify).\n---------\n\n[Season
+        Spotter Home](http://mkosmala.github.io/SeasonSpotterLanding/)\n---------","private":false,"retired_subjects_count":0,"configuration":{"user_chooses_workflow":false},"live":true,"urls":[],"migrated":false,"classifiers_count":11,"slug":"mkosmala/season-spotter-basic-beta1","redirect":null,"beta_requested":false,"beta_approved":false,"launch_requested":false,"launch_approved":true,"launch_date":null,"href":"/projects/405","workflow_description":"","primary_language":"en","tags":[],"experimental_tools":[],"completeness":0.0,"activity":0,"state":"live","researcher_quote":"","mobile_friendly":false,"featured":false,"links":{"workflows":["981","982","983","979","980","984"],"active_workflows":["981","982","983","979","980","984"],"subject_sets":["1863","1864","1865","1849","1850","1860","1851","1862","1852","1861","1853","1854","1859"],"owner":{"id":"19","display_name":"mkosmala","type":"users","href":"/users/19"},"project_contents":["405"],"project_roles":["495"],"pages":["1619","1620","1617","1618"],"avatar":{"href":"/projects/405/avatar","type":"avatars"},"background":{"href":"/projects/405/background","type":"backgrounds"},"attached_images":{"href":"/projects/405/attached_images","type":"attached_images"},"classifications_export":{"href":"/projects/405/classifications_export","type":"classifications_exports"},"subjects_export":{"href":"/projects/405/subjects_export","type":"subjects_exports"}}}],"links":{"projects.workflows":{"href":"/workflows?project_id={projects.id}","type":"workflows"},"projects.active_workflows":{"href":"/workflows?project_id={projects.id}","type":"active_workflows"},"projects.subject_sets":{"href":"/subject_sets?project_id={projects.id}","type":"subject_sets"},"projects.project_contents":{"href":"/project_contents?project_id={projects.id}","type":"project_contents"},"projects.project_roles":{"href":"/project_roles?project_id={projects.id}","type":"project_roles"},"projects.pages":{"href":"/projects/{projects.id}/pages","type":"project_pages"},"projects.organization":{"href":"/organizations/{projects.organization}","type":"organizations"},"projects.attached_images":{"href":"/projects/{projects.id}/attached_images","type":"media"},"projects.owner":{"href":"/{projects.owner.href}","type":"owners"},"projects.avatar":{"href":"/projects/{projects.id}/avatar","type":"media"},"projects.background":{"href":"/projects/{projects.id}/background","type":"media"},"projects.classifications_export":{"href":"/projects/{projects.id}/classifications_export","type":"media"},"projects.subjects_export":{"href":"/projects/{projects.id}/subjects_export","type":"media"}},"meta":{"projects":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/projects?id=405","previous_href":null,"next_href":null,"last_href":"/projects?id=405"}}}'
+    http_version: 
+  recorded_at: Tue, 05 Jun 2018 21:29:25 GMT
+recorded_with: VCR 3.0.3
