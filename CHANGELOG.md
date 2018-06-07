@@ -1,3 +1,7 @@
+# 0.3.7
+
+* Add client.project(project_id)
+
 # 0.3.4
 
 * Add `client.add_subject_set_to_workflow`

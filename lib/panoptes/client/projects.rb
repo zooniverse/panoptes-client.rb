@@ -13,6 +13,16 @@ module Panoptes
         panoptes.paginate("/projects", params)["projects"]
       end
 
+      # Fetches the specified project
+      #
+      # @see http://docs.panoptes.apiary.io/#reference/projects/project-collection/list-all-projects
+      # @param project_id [String] The ID of the project to be retrieved
+      # @return [Hash] The requested project
+      def project(project_id)
+        response = panoptes.get("/projects/#{project_id}")
+        response.fetch("projects").find {|i| i.fetch("id").to_s == project_id.to_s }
+      end
+
       # Starts a background process to generate a new CSV export of all the classifications in the project.
       #
       # @param project_id [Integer] the id of the project to export
