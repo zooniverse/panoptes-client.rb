@@ -20,13 +20,13 @@ module Panoptes
       #
       # @param subject_id [Integer]
       # @param project_id [Integer]
-      # @return true or false
+      # @return nil or the subject
       def subject_in_project?(subject_id, project_id)
         response = panoptes.get("/subjects/#{subject_id}?project_id=#{project_id}")
-        return true if response&.fetch('subjects')&.count > 0
-        return false
+        return response['subjects'][0] if response&.fetch('subjects')&.count > 0
+        return nil
       rescue Panoptes::Client::ResourceNotFound
-        return false
+        return nil
       end
 
       # Retire a subject for a workflow
