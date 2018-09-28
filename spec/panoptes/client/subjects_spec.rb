@@ -11,6 +11,22 @@ describe Panoptes::Client::Subjects, :vcr do
     end
   end
 
+  describe '#subject_in_project?' do
+    let(:client) { application_client }
+
+    it 'returns true if a subject is accessible to a project' do
+      result = client.subject_in_project?(72850, 1315)
+      expect(result).to be(true)
+      assert_requested :get, api_url('/subjects/72850?project_id=1315')
+    end
+
+    it 'returns false if a subject is inaccessible to a project' do
+      result = client.subject_in_project?(72850, 1)
+      expect(result).to be(false)
+      assert_requested :get, api_url('/subjects/72850?project_id=1')
+    end
+  end
+
   describe '#retire_subject' do
     let(:client) { application_client }
 

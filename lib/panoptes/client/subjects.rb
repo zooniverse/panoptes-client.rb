@@ -16,6 +16,19 @@ module Panoptes
         response.fetch("subjects")
       end
 
+      # Determine whether a particular subject is accessible to a particular project
+      #
+      # @param subject_id [Integer]
+      # @param project_id [Integer]
+      # @return true or false
+      def subject_in_project?(subject_id, project_id)
+        response = panoptes.get("/subjects/#{subject_id}?project_id=#{project_id}")
+        return true if response&.fetch('subjects')&.count > 0
+        return false
+      rescue Panoptes::Client::ResourceNotFound
+        return false
+      end
+
       # Retire a subject for a workflow
       #
       # @todo Add this endpoint to the Apiary docs and add a see-reference here.

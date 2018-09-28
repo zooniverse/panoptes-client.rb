@@ -1,0 +1,116 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://panoptes-staging.zooniverse.org/oauth/token
+    body:
+      encoding: UTF-8
+      string: client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET&grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 11 May 2016 12:15:36 GMT
+      Etag:
+      - W/"26eb7c0f048e59c745952455d9a4506f"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Pragma:
+      - no-cache
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 2bb28b3b-acfb-4dee-96cd-ac37a3544bee
+      X-Runtime:
+      - '0.035460'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '224'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"6844276bdd6e6c70781d5be5a2537f4e51443b3644b2a651889cb4e4dedcdf51","token_type":"bearer","expires_in":7200,"scope":"user
+        project group collection classification subject medium public","created_at":1462968936}'
+    http_version:
+  recorded_at: Wed, 11 May 2016 12:15:36 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/subjects/72850?project_id=1315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 11:54:14 GMT
+      Etag:
+      - '"acc16672498b3b8968a7ff82fc47f594"'
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 90b79a19-7534-46ae-8e19-5b11a2c7ae76
+      X-Runtime:
+      - '0.217224'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '1193'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"subjects":[{"id":"72850","metadata":{"RA":"161.82349","Dec":"47.422513","URL":"http://skyserver.sdss.org/dr12/en/tools/explore/Summary.aspx?ra=161.82349\u0026dec=47.422513","spiral":"1","elliptical":"0","Distance_Mpc":"176.7952941","SVG_filename":"1237658204504784907.svg","#Published_Redshift":"0.0400736"},"locations":[{"image/svg+xml":"https://panoptes-uploads.zooniverse.org/staging/subject_location/e40a8b1d-dd0b-4272-aa79-1395d89c8d63.svg"}],"zooniverse_id":null,"external_id":null,"created_at":"2017-09-08T17:12:11.105Z","updated_at":"2017-09-08T17:12:11.105Z","href":"/subjects/72850","links":{"project":"1315","subject_sets":["4399"]}}],"links":{"subjects.project":{"href":"/projects/{subjects.project}","type":"projects"},"subjects.collections":{"href":"/collections?subject_id={subjects.id}","type":"collections"},"subjects.subject_sets":{"href":"/subject_sets?subject_id={subjects.id}","type":"subject_sets"}},"meta":{"subjects":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/subjects?id=72850\u0026project_id=1315","previous_href":null,"next_href":null,"last_href":"/subjects?id=72850\u0026project_id=1315"}}}'
+    http_version:
+  recorded_at: Wed, 15 Jun 2016 11:54:14 GMT
+recorded_with: VCR 3.0.1
