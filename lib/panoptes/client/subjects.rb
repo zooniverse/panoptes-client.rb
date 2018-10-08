@@ -25,7 +25,12 @@ module Panoptes
         query = {}
         query[:project_id] = project_id if project_id
 
-        panoptes.get("/subjects/#{subject_id}", query).fetch('subjects', []).fetch(0, nil)
+        response = panoptes.get("/subjects/#{subject_id}", query)
+        if response.fetch('subjects', []).count > 1
+          raise StandardError.new 'Unexpectedly many subjects returned'
+        end
+
+        response.fetch('subjects', []).fetch(0, nil)
       end
 
       # Retire a subject for a workflow

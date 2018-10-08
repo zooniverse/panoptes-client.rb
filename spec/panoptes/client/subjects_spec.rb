@@ -26,6 +26,14 @@ describe Panoptes::Client::Subjects, :vcr do
       expect(result).to be(nil)
       assert_requested :get, api_url('/subjects/72850?project_id=1')
     end
+
+    it 'raises an error if too many subjects are returned' do
+      expect do
+        client.subject(72850, project_id: 1315)
+      end.to raise_error(StandardError)
+
+      assert_requested :get, api_url('/subjects/72850?project_id=1315')
+    end
   end
 
   describe '#retire_subject' do
