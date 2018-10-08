@@ -1,3 +1,7 @@
+# 0.3.8
+
+* Add client.subject(subject_id, *kwargs)
+
 # 0.3.7
 
 * Add client.project(project_id)

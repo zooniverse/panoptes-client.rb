@@ -16,17 +16,16 @@ module Panoptes
         response.fetch("subjects")
       end
 
-      # Determine whether a particular subject is accessible to a particular project
+      # Fetch a subject given filters (including permissions)
       #
       # @param subject_id [Integer]
       # @param project_id [Integer]
       # @return nil or the subject
-      def subject_in_project?(subject_id, project_id)
-        response = panoptes.get("/subjects/#{subject_id}?project_id=#{project_id}")
-        return response['subjects'][0] if response&.fetch('subjects')&.count > 0
-        return nil
-      rescue Panoptes::Client::ResourceNotFound
-        return nil
+      def subject(subject_id, project_id: nil)
+        query = {}
+        query[:project_id] = project_id if project_id
+
+        panoptes.get("/subjects/#{subject_id}", query).fetch('subjects', []).fetch(0, nil)
       end
 
       # Retire a subject for a workflow
