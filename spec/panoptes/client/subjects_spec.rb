@@ -11,6 +11,31 @@ describe Panoptes::Client::Subjects, :vcr do
     end
   end
 
+  describe '#subject' do
+    let(:client) { application_client }
+
+    it 'returns true if a subject is accessible to a project' do
+      result = client.subject(72850, project_id: 1315)
+      expect(result).not_to be(nil)
+      expect(result['id']).to eq('72850')
+      assert_requested :get, api_url('/subjects/72850?project_id=1315')
+    end
+
+    it 'returns false if a subject is inaccessible to a project' do
+      result = client.subject(72850, project_id: 1)
+      expect(result).to be(nil)
+      assert_requested :get, api_url('/subjects/72850?project_id=1')
+    end
+
+    it 'raises an error if too many subjects are returned' do
+      expect do
+        client.subject(72850, project_id: 1315)
+      end.to raise_error(StandardError)
+
+      assert_requested :get, api_url('/subjects/72850?project_id=1315')
+    end
+  end
+
   describe '#retire_subject' do
     let(:client) { application_client }
 
