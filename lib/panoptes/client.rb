@@ -1,6 +1,7 @@
 require 'panoptes/endpoints/json_api_endpoint'
 require 'panoptes/endpoints/json_endpoint'
 
+require 'panoptes/client/authentication'
 require 'panoptes/client/cellect'
 require 'panoptes/client/classifications'
 require 'panoptes/client/collections'
@@ -21,6 +22,7 @@ module Panoptes
     include Panoptes::Client::Me
 
     # Panoptes
+    include Panoptes::Client::Authentication
     include Panoptes::Client::Classifications
     include Panoptes::Client::Collections
     include Panoptes::Client::Projects
@@ -43,6 +45,7 @@ module Panoptes
     class ResourceNotFound < GenericError; end
     class ServerError < GenericError; end
     class NotLoggedIn < GenericError; end
+    class AuthenticationExpired < GenericError; end
 
     attr_reader :env, :auth, :panoptes, :talk, :cellect
 
@@ -59,28 +62,6 @@ module Panoptes
       @cellect = Panoptes::Endpoints::JsonEndpoint.new(
         url: panoptes_url, prefix: '/cellect'
       )
-    end
-
-    def current_user
-      raise NotLoggedIn unless @auth[:token]
-
-      payload, = JWT.decode @auth[:token], jwt_signing_public_key, algorithm: 'RS512'
-      payload.fetch('data')
-    end
-
-    def jwt_signing_public_key
-      @jwt_signing_public_key ||= OpenSSL::PKey::RSA.new(File.read(@public_key_path))
-    end
-
-    def public_key_for_env(env)
-      case env.to_s
-      when "staging"
-        File.expand_path(File.join("..", "..", "..", "data", "doorkeeper-jwt-staging.pub"), __FILE__)
-      when "production"
-        File.expand_path(File.join("..", "..", "..", "data", "doorkeeper-jwt-production.pub"), __FILE__)
-      else
-        nil
-      end
     end
 
     def panoptes_url
