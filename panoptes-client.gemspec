@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "deprecate"
   spec.add_dependency "faraday"
   spec.add_dependency "faraday-panoptes", "~> 0.3.0"
   spec.add_dependency "jwt", "~> 1.5.0"

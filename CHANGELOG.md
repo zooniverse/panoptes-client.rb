@@ -1,3 +1,8 @@
+# 0.4.0
+
+* Additional methods for interacting with JWT
+* Refactored all authentication code into separate module
+
 # 0.3.8
 
 * Add client.subject(subject_id, *kwargs)
