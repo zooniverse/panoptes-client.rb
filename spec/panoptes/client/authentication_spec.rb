@@ -49,13 +49,14 @@ describe Panoptes::Client::Authentication do
       end
 
       it 'raises an exception if the expiry date of an existing token is passed' do
-        allow(client).to receive(:decode_token).and_return(
-          { "data" => { "id" => 1323869}, "exp" => (Time.now.utc - 5*60).to_i }
+        expired_jwt_token = fake_access_token(-5*60)
+        client = Panoptes::Client.new(
+          env: :test,
+          auth: {token: expired_jwt_token},
+          public_key_path: test_public_key,
         )
-
         expect do
-          client.token_contents # have to call twice because we stub the
-          client.token_contents # method that would throw an exception the first time
+          client.token_contents
         end.to raise_error(Panoptes::Client::AuthenticationExpired)
       end
     end
