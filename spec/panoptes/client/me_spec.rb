@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Panoptes::Client::Me do
@@ -17,7 +19,7 @@ describe Panoptes::Client::Me do
 
       it 'returns information about the user' do
         me = client.me
-        expect(me).to include({"id" => "1323869"})
+        expect(me).to include('id' => '1323869')
         assert_requested :get, api_url('/me')
       end
     end

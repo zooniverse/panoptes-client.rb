@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Panoptes
   class Client
     module Subjects
@@ -12,8 +14,8 @@ module Panoptes
 
         raise 'Must filter on at least one of subject_set_id, workflow_id' if query.empty?
 
-        response = panoptes.paginate("/subjects", query)
-        response.fetch("subjects")
+        response = panoptes.paginate('/subjects', query)
+        response.fetch('subjects')
       end
 
       # Fetch a subject given filters (including permissions)
@@ -27,7 +29,7 @@ module Panoptes
 
         response = panoptes.get("/subjects/#{subject_id}", query)
         if response.fetch('subjects', []).count > 1
-          raise StandardError.new 'Unexpectedly many subjects returned'
+          raise StandardError, 'Unexpectedly many subjects returned'
         end
 
         response.fetch('subjects', []).fetch(0, nil)
@@ -40,11 +42,10 @@ module Panoptes
       # @param subject_id  [Integer] the ID of a subject associated with that workflow (through one of the assigned subject_sets)
       # @return nothing
       def retire_subject(workflow_id, subject_id, reason: nil)
-        panoptes.post("/workflows/#{workflow_id}/retired_subjects", {
-          admin: true,
-          subject_id: subject_id,
-          retirement_reason: reason
-        })
+        panoptes.post("/workflows/#{workflow_id}/retired_subjects",
+                      admin: true,
+                      subject_id: subject_id,
+                      retirement_reason: reason)
         true
       end
     end

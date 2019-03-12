@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'deprecate'
 
 module Panoptes
@@ -87,12 +89,10 @@ module Panoptes
 
       def public_key_for_env(env)
         case env.to_s
-        when "staging"
-          File.expand_path(File.join("..","..", "..", "..", "data", "doorkeeper-jwt-staging.pub"), __FILE__)
-        when "production"
-          File.expand_path(File.join("..","..", "..", "..", "data", "doorkeeper-jwt-production.pub"), __FILE__)
-        else
-          nil
+        when 'staging'
+          File.expand_path(File.join('..', '..', '..', '..', 'data', 'doorkeeper-jwt-staging.pub'), __FILE__)
+        when 'production'
+          File.expand_path(File.join('..', '..', '..', '..', 'data', 'doorkeeper-jwt-production.pub'), __FILE__)
         end
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Panoptes
   class Client
     module Discussions
@@ -11,8 +13,8 @@ module Panoptes
         query[:focus_id] = focus_id
         query[:focus_type] = focus_type
 
-        response = talk.get("/discussions", query)
-        response.fetch("discussions")
+        response = talk.get('/discussions', query)
+        response.fetch('discussions')
       end
     end
   end
