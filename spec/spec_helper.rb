@@ -34,8 +34,8 @@ def fake_token_contents(expiry)
   {"data" => {"id" => 1323869}, "exp" => expiry }
 end
 
-def fake_access_token
-  JWT.encode(fake_token_contents(Time.now.utc.to_i + 5*60), fake_keypair, 'RS512')
+def fake_access_token(expires_in=5*60)
+  JWT.encode(fake_token_contents(Time.now.utc.to_i + expires_in), fake_keypair, 'RS512')
 end
 
 def test_url;           ENV.fetch("ZOONIVERSE_URL",             'https://panoptes-staging.zooniverse.org'); end
