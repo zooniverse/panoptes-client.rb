@@ -22,7 +22,8 @@ describe Panoptes::Client::ProjectPreferences, :vcr do
       prefs = client.user_project_preferences(user_id, project_id)
       expect(prefs).not_to be_nil
       expect(prefs).to include('id' => pref_id.to_s)
-      assert_requested :get, api_url('/project_preferences?project_id=1710&user_id=1325801')
+      url = '/project_preferences?project_id=1710&user_id=1325801'
+      assert_requested :get, api_url(url)
     end
 
     it 'promotes the user to the desired workflow' do
@@ -30,7 +31,8 @@ describe Panoptes::Client::ProjectPreferences, :vcr do
       prefs = client.user_project_preferences(user_id, project_id)
 
       expect(prefs).not_to be_nil
-      expect(prefs.fetch('settings', {})).to include('workflow_id' => workflow_id.to_s)
+      settings = prefs.fetch('settings', {})
+      expect(settings).to include('workflow_id' => workflow_id.to_s)
       assert_requested :put, api_url("/project_preferences/#{pref_id}")
     end
   end

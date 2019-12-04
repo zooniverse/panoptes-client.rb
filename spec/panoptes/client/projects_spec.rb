@@ -21,7 +21,8 @@ describe Panoptes::Client::Projects, :vcr do
     it 'returns projects scoped to a search name' do
       projects = client.projects(search: 'galaxy')
       names = projects.map { |project| project['display_name'] }
-      expect(names.all? { |name| name.downcase.include?('galaxy') }).to be_truthy
+      galaxy_projects = names.all? { |name| name.downcase.include?('galaxy') }
+      expect(galaxy_projects).to be_truthy
     end
   end
 

@@ -5,7 +5,9 @@ module Panoptes
     module Workflows
       def workflow(workflow_id)
         response = panoptes.get("/workflows/#{workflow_id}")
-        response.fetch('workflows').find { |i| i.fetch('id').to_s == workflow_id.to_s }
+        response.fetch('workflows').find do |i|
+          i.fetch('id').to_s == workflow_id.to_s
+        end
       end
 
       def create_workflow(attributes)
@@ -14,7 +16,10 @@ module Panoptes
       end
 
       def add_subject_set_to_workflow(workflow_id, subject_set_id)
-        panoptes.post("/workflows/#{workflow_id}/links/subject_sets", subject_sets: subject_set_id)
+        panoptes.post(
+          "/workflows/#{workflow_id}/links/subject_sets",
+          subject_sets: subject_set_id
+        )
       end
     end
   end

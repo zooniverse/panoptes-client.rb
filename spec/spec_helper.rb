@@ -37,31 +37,44 @@ def fake_token_contents(expiry)
 end
 
 def fake_access_token
-  JWT.encode(fake_token_contents(Time.now.utc.to_i + 5 * 60), fake_keypair, 'RS512')
+  payload = fake_token_contents(Time.now.utc.to_i + 5 * 60)
+  JWT.encode(payload, fake_keypair, 'RS512')
 end
 
 def test_url
-  ENV.fetch('ZOONIVERSE_URL',             'https://panoptes-staging.zooniverse.org')
+  ENV.fetch(
+    'ZOONIVERSE_URL',
+    'https://panoptes-staging.zooniverse.org'
+  )
 end
 
 def test_talk_url
-  ENV.fetch('ZOONIVERSE_TALK_URL',        'https://talk-staging.zooniverse.org')
+  ENV.fetch(
+    'ZOONIVERSE_TALK_URL',
+    'https://talk-staging.zooniverse.org'
+  )
 end
 
 def test_access_token
-  ENV.fetch('ZOONIVERSE_ACCESS_TOKEN',    fake_access_token)
+  ENV.fetch(
+    'ZOONIVERSE_ACCESS_TOKEN',
+    fake_access_token
+  )
 end
 
 def test_public_key
-  ENV.fetch('ZOONIVERSE_PUBLIC_KEY_PATH', fake_public_key_path)
+  ENV.fetch(
+    'ZOONIVERSE_PUBLIC_KEY_PATH',
+    fake_public_key_path
+  )
 end
 
 def test_client_id
-  ENV.fetch('ZOONIVERSE_CLIENT_ID',       'x' * 64)
+  ENV.fetch('ZOONIVERSE_CLIENT_ID', 'x' * 64)
 end
 
 def test_client_secret
-  ENV.fetch('ZOONIVERSE_CLIENT_SECRET',   'x' * 64)
+  ENV.fetch('ZOONIVERSE_CLIENT_SECRET', 'x' * 64)
 end
 
 def unauthenticated_client
@@ -71,7 +84,10 @@ end
 def application_client
   Panoptes::Client.new(
     env: :test,
-    auth: { client_id: test_client_id, client_secret: test_client_secret }
+    auth: {
+      client_id: test_client_id,
+      client_secret: test_client_secret
+    }
   )
 end
 
