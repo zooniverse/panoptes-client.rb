@@ -31,7 +31,8 @@ module Panoptes
       # @return [Hash] the medium information where the export will be stored when it's generated
       def create_classifications_export(project_id)
         params = export_params('text/csv')
-        panoptes.post("/projects/#{project_id}/classifications_export", params)['media'].first
+        path = export_path(project_id, 'classifications_export')
+        panoptes.post(path, params)['media'].first
       end
 
       # Starts a background process to generate a new CSV export of all the subjects in the project.
@@ -40,7 +41,8 @@ module Panoptes
       # @return [Hash] the medium information where the export will be stored when it's generated
       def create_subjects_export(project_id)
         params = export_params('text/csv')
-        panoptes.post("/projects/#{project_id}/subjects_export", params)['media'].first
+        path = export_path(project_id, 'subjects_export')
+        panoptes.post(path, params)['media'].first
       end
 
       # Starts a background process to generate a new CSV export of all the workflows in the project.
@@ -49,7 +51,8 @@ module Panoptes
       # @return [Hash] the medium information where the export will be stored when it's generated
       def create_workflows_export(project_id)
         params = export_params('text/csv')
-        panoptes.post("/projects/#{project_id}/workflows_export", params)['media'].first
+        path = export_path(project_id, 'workflows_export')
+        panoptes.post(path, params)['media'].first
       end
 
       # Starts a background process to generate a new CSV export of all the workflow_contents in the project.
@@ -58,8 +61,8 @@ module Panoptes
       # @return [Hash] the medium information where the export will be stored when it's generated
       def create_workflow_contents_export(project_id)
         params = export_params('text/csv')
-        export_url = "/projects/#{project_id}/workflow_contents_export"
-        panoptes.post(export_url, params)['media'].first
+        path = export_path(project_id, 'workflow_contents_export')
+        panoptes.post(path, params)['media'].first
       end
 
       # Starts a background process to generate a new CSV export of the aggretation results of the project.
@@ -68,14 +71,18 @@ module Panoptes
       # @return [Hash] the medium information where the export will be stored when it's generated
       def create_aggregations_export(project_id)
         params = export_params('application/x-gzip')
-        export_url = "/projects/#{project_id}/aggregations_export"
-        panoptes.post(export_url, params)['media'].first
+        path = export_path(project_id, 'aggregations_export')
+        panoptes.post(path, params)['media'].first
       end
 
       private
 
       def export_params(content_type)
         { media: { content_type: content_type, metadata: { recipients: [] } } }
+      end
+
+      def export_path(project_id, export_type)
+        "/projects/#{project_id}/#{export_type}"
       end
     end
   end
