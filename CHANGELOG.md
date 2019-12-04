@@ -1,6 +1,7 @@
 # 1.0.0
 
 * Refactor of authentication code public interface
+* Remove deprecated `current_user` method
 * Stable API release
 
 # 0.4.0
