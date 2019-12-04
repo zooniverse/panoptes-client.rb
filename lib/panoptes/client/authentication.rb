@@ -53,11 +53,6 @@ module Panoptes
         token_contents.fetch('admin', false)
       end
 
-      def current_user
-        token_contents
-      end
-      deprecate :current_user, :token_contents, 2019, 7
-
       private
 
       def ensure_authenticated
