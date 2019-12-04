@@ -1,3 +1,8 @@
+# 1.0.0
+
+* Refactor of authentication code public interface
+* Stable API release
+
 # 0.4.0
 
 * Additional methods for interacting with JWT
