@@ -195,23 +195,5 @@ describe Panoptes::Client::Authentication do
         expect(client).to have_received(:token_contents).twice
       end
     end
-
-    describe 'current_user' do
-      let(:client) do
-        user_client
-      end
-
-      it 'is the same as token contents' do
-        payload_data = { 'id' => 1, 'admin' => true }
-        allow(client).to receive(:token_contents).and_return(payload_data)
-        expect(client.current_user).to eq(payload_data)
-        expect(client).to have_received(:token_contents).once
-      end
-    end
-
-    it 'raises when not logged in' do
-      client = unauthenticated_client
-      expect { client.token_contents }.to raise_error(Panoptes::Client::NotLoggedIn)
-    end
   end
 end
