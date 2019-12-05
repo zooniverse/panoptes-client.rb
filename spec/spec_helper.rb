@@ -36,9 +36,12 @@ def fake_token_contents(expiry)
   { 'data' => { 'id' => 1_323_869 }, 'exp' => expiry }
 end
 
-def fake_access_token
-  payload = fake_token_contents(Time.now.utc.to_i + 5 * 60)
-  JWT.encode(payload, fake_keypair, 'RS512')
+def fake_access_token(expires_in=5*60)
+  JWT.encode(
+    fake_token_contents(Time.now.utc.to_i + expires_in),
+    fake_keypair,
+    'RS512'
+  )
 end
 
 def test_url

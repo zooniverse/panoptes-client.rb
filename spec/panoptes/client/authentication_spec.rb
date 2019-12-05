@@ -50,12 +50,12 @@ describe Panoptes::Client::Authentication do
         expect(client).to have_received(:decode_token).once
       end
 
-      it 'raises an exception if the expiry date of an existing token is passed' do
+      it 'raises an exception if padded token is expired' do
         expired_jwt_token = fake_access_token(-5*60)
         client = Panoptes::Client.new(
           env: :test,
-          auth: {token: expired_jwt_token},
-          public_key_path: test_public_key,
+          auth: { token: expired_jwt_token },
+          public_key_path: test_public_key
         )
         expect do
           client.token_contents
