@@ -58,7 +58,10 @@ module Panoptes
       end
 
       def request(method, path, *args)
-        path = "#{prefix}/#{path}" if prefix
+        if prefix
+          sep = path[0] == '/' ? nil : '/'
+          path = "#{prefix}#{sep}#{path}"
+        end
         handle_response connection.send(method, path, *args)
       end
 
