@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Panoptes::Client::Workflows, :vcr do
@@ -19,8 +21,8 @@ describe Panoptes::Client::Workflows, :vcr do
         display_name: 'panoptes-client.rb test',
         primary_language: 'en',
         first_task: 'init',
-        tasks: {"T1"=>{"help"=>"", "type"=>"single", "answers"=>[{"next"=>"T2", "label"=>"Yes"}, {"label"=>"No"}], "question"=>"Would you like to draw something?", "required"=>true}, "T2"=>{"help"=>"", "type"=>"drawing", "tools"=>[], "instruction"=>"Explain what to draw."}, "init"=>{"type"=>"single", "answers"=>[{"label"=>"Yes"}], "question"=>"Is this a question?"}},
-        links: {project: 813}
+        tasks: { 'T1' => { 'help' => '', 'type' => 'single', 'answers' => [{ 'next' => 'T2', 'label' => 'Yes' }, { 'label' => 'No' }], 'question' => 'Would you like to draw something?', 'required' => true }, 'T2' => { 'help' => '', 'type' => 'drawing', 'tools' => [], 'instruction' => 'Explain what to draw.' }, 'init' => { 'type' => 'single', 'answers' => [{ 'label' => 'Yes' }], 'question' => 'Is this a question?' } },
+        links: { project: 813 }
       )
       expect(workflow['id']).to be
       assert_requested :post, api_url('/workflows')
@@ -31,7 +33,7 @@ describe Panoptes::Client::Workflows, :vcr do
     let(:client) { user_client }
     it 'adds subject set to workflow' do
       client.add_subject_set_to_workflow(2882, 4398)
-      assert_requested :post, api_url("/workflows/2882/links/subject_sets")
+      assert_requested :post, api_url('/workflows/2882/links/subject_sets')
     end
   end
 end

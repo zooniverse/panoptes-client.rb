@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Panoptes::Client::Subjects, :vcr do
@@ -15,21 +17,21 @@ describe Panoptes::Client::Subjects, :vcr do
     let(:client) { application_client }
 
     it 'returns true if a subject is accessible to a project' do
-      result = client.subject(72850, project_id: 1315)
+      result = client.subject(72_850, project_id: 1315)
       expect(result).not_to be(nil)
       expect(result['id']).to eq('72850')
       assert_requested :get, api_url('/subjects/72850?project_id=1315')
     end
 
     it 'returns false if a subject is inaccessible to a project' do
-      result = client.subject(72850, project_id: 1)
+      result = client.subject(72_850, project_id: 1)
       expect(result).to be(nil)
       assert_requested :get, api_url('/subjects/72850?project_id=1')
     end
 
     it 'raises an error if too many subjects are returned' do
       expect do
-        client.subject(72850, project_id: 1315)
+        client.subject(72_850, project_id: 1315)
       end.to raise_error(StandardError)
 
       assert_requested :get, api_url('/subjects/72850?project_id=1315')
@@ -40,7 +42,7 @@ describe Panoptes::Client::Subjects, :vcr do
     let(:client) { application_client }
 
     it 'retires a subject' do
-      retirement = client.retire_subject(688, 11937, reason: 'other')
+      retirement = client.retire_subject(688, 11_937, reason: 'other')
       expect(retirement).to be_truthy
     end
   end

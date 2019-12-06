@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'panoptes/endpoints/json_api_endpoint'
 require 'panoptes/endpoints/json_endpoint'
 
@@ -66,19 +68,19 @@ module Panoptes
 
     def panoptes_url
       case env
-      when :production, 'production'.freeze
-        'https://panoptes.zooniverse.org'.freeze
+      when :production, 'production'
+        'https://panoptes.zooniverse.org'
       else
-        'https://panoptes-staging.zooniverse.org'.freeze
+        'https://panoptes-staging.zooniverse.org'
       end
     end
 
     def talk_url
       case env
-      when :production, 'production'.freeze
-        'https://talk.zooniverse.org'.freeze
+      when :production, 'production'
+        'https://talk.zooniverse.org'
       else
-        'https://talk-staging.zooniverse.org'.freeze
+        'https://talk-staging.zooniverse.org'
       end
     end
   end

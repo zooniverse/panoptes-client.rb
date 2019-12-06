@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Panoptes::Client::Authentication do
@@ -30,7 +32,7 @@ describe Panoptes::Client::Authentication do
       let(:client) do
         user_client.tap do |client|
           allow(client).to receive(:decode_token).and_return(
-            { "data" => { "id" => 1323869}, "exp" => (Time.now.utc + 5*60).to_i }
+            'data' => { 'id' => 1_323_869 }, 'exp' => (Time.now.utc + 5 * 60).to_i
           )
         end
       end
@@ -39,7 +41,7 @@ describe Panoptes::Client::Authentication do
         token_contents = client.token_contents
         expect(token_contents).not_to have_key('data')
         expect(token_contents).to have_key('id')
-        expect(token_contents['id']).to eq(1323869)
+        expect(token_contents['id']).to eq(1_323_869)
       end
 
       it 'only decodes the token once' do
@@ -48,12 +50,12 @@ describe Panoptes::Client::Authentication do
         expect(client).to have_received(:decode_token).once
       end
 
-      it 'raises an exception if the expiry date of an existing token is passed' do
+      it 'raises an exception if padded token is expired' do
         expired_jwt_token = fake_access_token(-5*60)
         client = Panoptes::Client.new(
           env: :test,
-          auth: {token: expired_jwt_token},
-          public_key_path: test_public_key,
+          auth: { token: expired_jwt_token },
+          public_key_path: test_public_key
         )
         expect do
           client.token_contents
@@ -69,14 +71,14 @@ describe Panoptes::Client::Authentication do
       it 'returns the expiry field' do
         Timecop.freeze(Time.now.utc) do
           now = Time.now.utc
-          allow(client).to receive(:jwt_payload).and_return("data" => {}, "exp" => now.to_i)
+          allow(client).to receive(:jwt_payload).and_return('data' => {}, 'exp' => now.to_i)
           expect(client.token_expiry.to_i).to eq(now.utc.to_i)
         end
       end
 
       it 'does not cache the contents, but checks the expiry every time' do
         now = Time.now.utc
-        allow(client).to receive(:jwt_payload).and_return("data" => {}, "exp" => now.to_i)
+        allow(client).to receive(:jwt_payload).and_return('data' => {}, 'exp' => now.to_i)
         client.token_expiry
         client.token_expiry
         expect(client).to have_received(:jwt_payload).twice
@@ -89,17 +91,17 @@ describe Panoptes::Client::Authentication do
       end
 
       it 'is true if there is a valid user id' do
-        allow(client).to receive(:token_contents).and_return("id" => 1323869)
+        allow(client).to receive(:token_contents).and_return('id' => 1_323_869)
         expect(client.authenticated?).to be true
       end
 
       it 'is false if there is no valid user id' do
-        allow(client).to receive(:token_contents).and_return(Hash.new)
+        allow(client).to receive(:token_contents).and_return({})
         expect(client.authenticated?).to be false
       end
 
       it 'does not cache the result' do
-        allow(client).to receive(:token_contents).and_return(Hash.new)
+        allow(client).to receive(:token_contents).and_return({})
         client.authenticated?
         client.authenticated?
         expect(client).to have_received(:token_contents).twice

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'faraday'
 require 'faraday_middleware'
 require 'faraday/panoptes'
@@ -86,9 +88,7 @@ module Panoptes
           faraday.request :json
           faraday.response :json
           faraday.adapter Faraday.default_adapter
-          if @params
-            faraday.params = @params
-          end
+          faraday.params = @params if @params
         end
       end
 
