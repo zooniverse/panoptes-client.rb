@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/collections/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.17.3
+      Authorization:
+      - Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzUxMiJ9.eyJkYXRhIjp7ImlkIjoxMzIzODY5fSwiZXhwIjoxNTg2Mjg1NzkyfQ.qhEQ8ixsSs5O83NVRIgdS21HGzLMShF92R9BIisnaOg7RUr1RHwBLZv4GRQ71AbpjUb2KKyuHHL4zBkYXymTQvUs4thGQmZFBWKXUGAq8hlOhM8N1kZ9Gy_WQTQJklDZ8IfTEAIB9e2kOIHqivrcIJ4nnp4UT6ICaT1wgZRuh_r6HbmrrXdW3KVRYO7HzXi60X1xFgXmPkR-8XDJBEYsCB64yHaymZTglpUiAz0jDnOrlFmixNJPVceKBCsfeIhmmt2ypJ-R9CTq2_JBqXaYl-UGEUBKvrfloL-tlSiYAgogwSOI8kz-P4Y9Y1RtW3UFKtbm5GEq_kipWa0vhQA8aA
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Tue, 07 Apr 2020 18:51:33 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - 00de82f7-c53e-498c-b46e-157cf4091c14
+      X-Runtime:
+      - '0.085651'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '84'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"message":"Could not find collection with id=''1''"}]}'
+    http_version: null
+  recorded_at: Tue, 07 Apr 2020 18:51:33 GMT
+recorded_with: VCR 5.1.0
