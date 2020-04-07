@@ -18,7 +18,7 @@ In general, this library is supposed to be a thin, flat layer over our [HTTP-bas
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 The test suite uses VCR to record HTTP requests, so if you're not making any new requests you should be fine with the existing cassettes. If you are, the test suite uses environment variables to pull in authentication credentials. You'll need to [create an OAuth application on staging](https://panoptes-staging.zooniverse.org/oauth/applications), and set the following env vars:
 
