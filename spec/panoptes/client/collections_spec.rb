@@ -7,9 +7,9 @@ describe Panoptes::Client::Collections, :vcr do
 
   describe '#collection' do
     it 'returns a collection with the given id' do
-      collection = client.collection(1)
-      expect(collection['id']).to eq('1')
-      assert_requested :get, api_url('/collections/1')
+      collection = client.collection(418)
+      expect(collection['id']).to eq('418')
+      assert_requested :get, api_url('/collections/418')
     end
   end
 

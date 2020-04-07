@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://panoptes-staging.zooniverse.org/api/collections/1
+    uri: https://panoptes-staging.zooniverse.org/api/collections/418
     body:
       encoding: US-ASCII
       string: ''
@@ -19,8 +19,8 @@ http_interactions:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
-      code: 404
-      message: Not Found
+      code: 200
+      message: OK
     headers:
       Cache-Control:
       - no-cache
@@ -28,6 +28,8 @@ http_interactions:
       - application/vnd.api+json; version=1; charset=utf-8
       Date:
       - Tue, 07 Apr 2020 18:51:33 GMT
+      Etag:
+      - '"e183df29e0c551b8cb880309f8f6ffcc"'
       P3p:
       - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
       Server:
@@ -41,18 +43,18 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Request-Id:
-      - 00de82f7-c53e-498c-b46e-157cf4091c14
+      - 47d9c0dd-0de3-4b5c-9854-e33af929e262
       X-Runtime:
-      - '0.085651'
+      - '0.314836'
       X-Xss-Protection:
       - 1; mode=block
       Content-Length:
-      - '84'
+      - '1203'
       Connection:
       - keep-alive
     body:
-      encoding: ASCII-8BIT
-      string: '{"errors":[{"message":"Could not find collection with id=''1''"}]}'
+      encoding: UTF-8
+      string: '{"collections":[{"id":"418","name":null,"display_name":"creating a new collection","created_at":"2019-02-11T17:37:34.116Z","updated_at":"2019-02-11T17:37:34.116Z","slug":"srallen086/creating-a-new-collection","href":"/collections/418","favorite":false,"private":false,"default_subject_src":"https://panoptes-uploads.zooniverse.org/staging/subject_location/f50844a7-2b6b-43f0-9fee-1d87f16f28f7.png","description":"","links":{"owner":{"id":"1756","display_name":"srallen086","type":"users","href":"/users/1756"},"collection_roles":["10706"],"subjects":["45029","45022"],"projects":[]}}],"links":{"collections.collection_roles":{"href":"/collection_roles?collection_id={collections.id}","type":"collection_roles"},"collections.subjects":{"href":"/subjects?collection_id={collections.id}","type":"subjects"},"collections.projects":{"href":"/projects?collection_id={collections.id}","type":"projects"},"collections.owner":{"href":"/{collections.owner.href}","type":"owners"}},"meta":{"collections":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/collections?id=418","previous_href":null,"next_href":null,"last_href":"/collections?id=418"}}}'
     http_version: null
   recorded_at: Tue, 07 Apr 2020 18:51:33 GMT
 recorded_with: VCR 5.1.0
