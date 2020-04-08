@@ -5,8 +5,7 @@ module Panoptes
     module Collections
       def collection(collection_id)
         response = panoptes.get("/collections/#{collection_id}")
-        response.fetch('collections')
-                .find { |i| i.fetch('id').to_s == collection_id.to_s }
+        response['collections'].first
       end
 
       def add_subjects_to_collection(collection_id, subject_ids)
