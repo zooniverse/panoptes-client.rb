@@ -1,3 +1,7 @@
+# 1.1.0
+
+* Add method to get single collection
+
 # 1.0.0
 
 * Refactor of authentication code public interface
