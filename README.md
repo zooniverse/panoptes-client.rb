@@ -34,6 +34,16 @@ We recommend [Direnv](https://github.com/direnv/direnv) as good utility to allow
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/panoptes-client. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Publishing
+
+Follow these steps for publishing changes to the panoptes-client.rb ruby gem.
+
+1. Make sure changes have been outlined in CHANGELOG.md, and version has been updated in lib/panoptes/client/version.rb. Reference [Semantic Versioning](https://semver.org/) for guidance on how to update the version number.
+2. Tag a release when your PR has been merged into master. Use [this guide](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository) for reference on how to create release tags. Set the version number (e.g. v1.1.1) as the tag name. Select the master branch as the target branch. In the release description, list out the changes that have been made just as you did in CHANGELOG.md. Do not select pre-release unless it’s not yet ready for production, and then click ‘Publish Release’.
+3. Once the release tag is set, check out the release branch locally and test to make sure everything is working as expected, run tests and make sure they pass. Use the following command to check out a branch via its tag: `git checkout tags/<tag>`
+4. Create the package by running `rake build`. This will build the new version of the panoptes gem (e.g. panoptes-client-1.1.1.gem) into the pkg directory. Once you’ve done this, run `bundler console` to make sure everything works as expected. For more details on packaging and distributing ruby gems, check out [this article](https://www.digitalocean.com/community/tutorials/how-to-package-and-distribute-ruby-applications-as-a-gem-using-rubygems).
+5. To publish the gem, use the command `[sudo] gem push [gem file]`. You’ll need to enter your rubygem.org credentials. Make sure you are one of the owners of the gem, or else you will not have permission to publish. You should see the version updated shortly on https://rubygems.org/gems/panoptes-client. And that’s it!
+
 
 ## License
 
