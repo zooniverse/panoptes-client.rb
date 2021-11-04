@@ -1,0 +1,11 @@
+version: '3'
+services:
+  panoptes-client:
+    build:
+      context: .
+    volumes:
+      - ./:/panoptes-client
+      - gem_cache:/usr/local/bundle
+
+volumes:
+  gem_cache:
