@@ -68,8 +68,12 @@ describe Panoptes::Endpoints::JsonApiEndpoint do
       end
       let(:yield_args) { [payload, payload] }
 
-      it 'yields data and location for first page' do
+      it ' with a block it yields data and location for first page' do
         expect { |b| endpoint.paginate('/subjects', workflow_id: 1, &b) }.to yield_successive_args(yield_args)
+      end
+
+      it 'without block syntax it returns the combined page data' do
+        expect(endpoint.paginate('/subjects', workflow_id: 1)).to match(payload)
       end
     end
 
@@ -90,8 +94,13 @@ describe Panoptes::Endpoints::JsonApiEndpoint do
         allow(endpoint).to receive(:get).with(next_path, query).and_return(payload)
       end
 
-      it 'yields data and location both pages' do
+      it 'with a block it yields data and location both pages' do
         expect { |b| endpoint.paginate(path, query, &b) }.to yield_successive_args(*yield_args)
+      end
+
+      it 'without block syntax it returns the combined page data' do
+        payload['subjects'] << payload['subjects'].dup
+        expect(endpoint.paginate('/subjects', workflow_id: 1)).to match(payload)
       end
     end
   end
