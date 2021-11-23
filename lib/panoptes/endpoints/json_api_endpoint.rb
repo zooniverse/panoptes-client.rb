@@ -15,7 +15,7 @@ module Panoptes
 
         # while we have more result set pages
         while (next_path = last_response['meta'][resource]['next_href'])
-          # fetch subsequent pages of data
+          # fetch next page of data
           last_response = get(next_path, query)
           if block_given?
             # if we pass a block then yield the first page and current page responses
