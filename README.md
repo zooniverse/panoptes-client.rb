@@ -1,6 +1,6 @@
 # Panoptes::Client
 
-[![Build Status](https://travis-ci.org/zooniverse/panoptes-client.rb.svg?branch=master)](https://travis-ci.org/zooniverse/panoptes-client.rb)
+[![Build Status](https://github.com/zooniverse/panoptes-client.rb/actions/workflows/run_tests_CI.yml/badge.svg?)
 [![Yard Docs](http://img.shields.io/badge/yard-docs-blue.svg)](http://rubydoc.info/github/zooniverse/panoptes-client.rb/)
 
 ## Installation
