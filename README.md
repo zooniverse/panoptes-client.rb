@@ -13,7 +13,7 @@ gem 'panoptes-client'
 
 In general, this library is supposed to be a thin, flat layer over our [HTTP-based API](http://docs.panoptes.apiary.io/). All public API methods can be found on the `Client` object.
 
-**A lot of methods are still missing. We've only just started with this wrapper. You can either issue a PR adding the one you need, or use the generic `get` / `post` methods on `Client`.**
+**A lot of methods are still missing. You can either issue a PR adding the one you need, or use the generic `get` / `post` methods on `Client`.**
 
 
 ## Development
