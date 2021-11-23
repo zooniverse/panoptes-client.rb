@@ -1,2 +1,9 @@
 Style/Documentation:
   Enabled: false
+
+Layout/LineLength:
+  Max: 160
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'
