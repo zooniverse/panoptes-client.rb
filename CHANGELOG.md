@@ -1,3 +1,14 @@
+# 1.1.1
+
+* Fix a pagination bug that skipped the first page of API results when using a block to process results. Note this did not impact the use of the paginate method without a block.
+
+```ruby
+# impacted
+client.paginate('/subjects', {}) { |initial_page, page| .. }
+# not impacted
+all_page_results = client.paginate('/subjects', {})
+```
+
 # 1.1.0
 
 * Add method to get single collection
