@@ -1,3 +1,7 @@
+# 1.2.0
+
+* Relax the `faraday-panoptes` gem version constraints to allow it to upgrade
+
 # 1.1.1
 
 * Fix a pagination bug that skipped the first page of API results when using a block to process results. Note this did not impact the use of the paginate method without a block.
