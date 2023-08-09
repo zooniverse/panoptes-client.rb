@@ -1,0 +1,423 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/project_preferences?project_id=1710&user_id=1325801
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Mon, 22 Jan 2018 23:05:54 GMT
+      Etag:
+      - W/"95c26902b42dadd077e7c55534603da1"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Cache-Status:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - e324e9b6-71a5-4910-bf6d-c7fe7fab2971
+      X-Runtime:
+      - '0.049480'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '459'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"project_preferences":[{"id":"655348","email_communication":null,"preferences":{"tutorials_completed_at":{"142":"2017-11-07T17:30:18.449Z"}},"href":"/project_preferences/655348","activity_count":0,"activity_count_by_workflow":{},"settings":{"workflow_id": "3333"},"created_at":"2017-11-07T17:30:14.271Z","updated_at":"2017-11-07T17:30:18.635Z","links":{"user":"1325801","project":"1710"}}],"links":{"project_preferences.user":{"href":"/users/{project_preferences.user}","type":"users"},"project_preferences.project":{"href":"/projects/{project_preferences.project}","type":"projects"}},"meta":{"project_preferences":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/project_preferences?project_id=1710\u0026user_id=1325801","previous_href":null,"next_href":null,"last_href":"/project_preferences?project_id=1710\u0026user_id=1325801"}}}'
+    http_version:
+  recorded_at: Tue, 23 Jan 2018 21:18:00 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/project_preferences/655348
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Mon, 22 Jan 2018 23:05:54 GMT
+      Etag:
+      - W/"95c26902b42dadd077e7c55534603da1"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Cache-Status:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - e324e9b6-71a5-4910-bf6d-c7fe7fab2971
+      X-Runtime:
+      - '0.049480'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '459'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"project_preferences":[{"id":"655348","email_communication":null,"preferences":{"tutorials_completed_at":{"142":"2017-11-07T17:30:18.449Z"}},"href":"/project_preferences/655348","activity_count":0,"activity_count_by_workflow":{},"settings":{"workflow_id": "3333"},"created_at":"2017-11-07T17:30:14.271Z","updated_at":"2017-11-07T17:30:18.635Z","links":{"user":"1325801","project":"1710"}}],"links":{"project_preferences.user":{"href":"/users/{project_preferences.user}","type":"users"},"project_preferences.project":{"href":"/projects/{project_preferences.project}","type":"projects"}},"meta":{"project_preferences":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/project_preferences?project_id=1710\u0026user_id=1325801","previous_href":null,"next_href":null,"last_href":"/project_preferences?project_id=1710\u0026user_id=1325801"}}}'
+    http_version:
+  recorded_at: Tue, 23 Jan 2018 21:18:00 GMT
+- request:
+    method: put
+    uri: https://panoptes-staging.zooniverse.org/api/project_preferences/655348
+    body:
+      encoding: UTF-8
+      string: '{"project_preferences":{"settings":{"workflow_id": "9999"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      If-Match:
+      - W/"95c26902b42dadd077e7c55534603da1"
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Wed, 15 Jun 2016 12:12:58 GMT
+      Last-Modified:
+      - Wed, 15 Jun 2016 12:12:57 GMT
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - e506be90-e49e-45ae-8176-a8952d6ff66f
+      X-Runtime:
+      - '0.179624'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '673'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"project_preferences":[{"id":"655348","email_communication":null,"preferences":{"tutorials_completed_at":{"142":"2017-11-07T17:30:18.449Z"}},"href":"/project_preferences/655348","activity_count":0,"activity_count_by_workflow":{},"settings":{"workflow_id":"9999"},"created_at":"2017-11-07T17:30:14.271Z","updated_at":"2018-01-24T20:19:42.405Z","links":{"user":"1325801","project":"1710"}}],"links":{"project_preferences.user":{"href":"/users/{project_preferences.user}","type":"users"},"project_preferences.project":{"href":"/projects/{project_preferences.project}","type":"projects"}},"meta":{"project_preferences":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/project_preferences","previous_href":null,"next_href":null,"last_href":"/project_preferences"}}}'
+    http_version:
+  recorded_at: Wed, 15 Jun 2016 12:12:58 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/project_preferences?project_id=1710&user_id=1325801
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Date:
+      - Mon, 22 Jan 2018 23:05:54 GMT
+      Etag:
+      - W/"95c26902b42dadd077e7c55534603da1"
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      Server:
+      - nginx/1.10.3 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      X-Cache-Status:
+      - MISS
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Request-Id:
+      - e324e9b6-71a5-4910-bf6d-c7fe7fab2971
+      X-Runtime:
+      - '0.049480'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '459'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"project_preferences":[{"id":"655348","email_communication":null,"preferences":{"tutorials_completed_at":{"142":"2017-11-07T17:30:18.449Z"}},"href":"/project_preferences/655348","activity_count":0,"activity_count_by_workflow":{},"settings":{"workflow_id": "9999"},"created_at":"2017-11-07T17:30:14.271Z","updated_at":"2017-11-07T17:30:18.635Z","links":{"user":"1325801","project":"1710"}}],"links":{"project_preferences.user":{"href":"/users/{project_preferences.user}","type":"users"},"project_preferences.project":{"href":"/projects/{project_preferences.project}","type":"projects"}},"meta":{"project_preferences":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/project_preferences?project_id=1710\u0026user_id=1325801","previous_href":null,"next_href":null,"last_href":"/project_preferences?project_id=1710\u0026user_id=1325801"}}}'
+    http_version:
+  recorded_at: Tue, 23 Jan 2018 21:18:00 GMT
+  recorded_with: VCR 3.0.3
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/workflows/3333
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 09 Aug 2023 20:39:12 GMT
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"7f547d624f1ed25e8f02cb02ad8f5df8"
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      X-Request-Id:
+      - c0c7c1e1a75ca2d2e1446afd882d0766
+      X-Runtime:
+      - '0.114474'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"workflows":[{"id":"3333","display_name":"Test Workflow 3333","tasks":{"T0":{"help":"","type":"single","answers":[{"label":"Yes"},{"label":"No"}],"question":"Enter
+        a question.","required":false}},"steps":[],"classifications_count":0,"subjects_count":12,"created_at":"2019-05-29T21:24:34.975Z","updated_at":"2023-04-28T20:06:43.204Z","finished_at":null,"first_task":"T0","primary_language":"en","version":"5.8","content_language":"en","prioritized":false,"grouped":false,"pairwise":false,"retirement":{"options":{"count":99},"criteria":"classification_count"},"retired_set_member_subjects_count":0,"href":"/workflows/3333","active":false,"mobile_friendly":false,"aggregation":{},"configuration":{"level": "1"},"public_gold_standard":false,"completeness":0.0,"links":{"project":"1693","subject_sets":["4700"],"tutorial_subject":null,"published_version":null,"attached_images":{"href":"/workflows/3333/attached_images","type":"attached_images","ids":[]},"classifications_export":{"href":"/workflows/3333/classifications_export","type":"classifications_exports"}}}],"links":{"workflows.project":{"href":"/projects/{workflows.project}","type":"projects"},"workflows.subject_sets":{"href":"/subject_sets?workflow_id={workflows.id}","type":"subject_sets"},"workflows.tutorial_subject":{"href":"/subjects/{workflows.tutorial_subject}","type":"tutorial_subjects"},"workflows.published_version":{"href":"/workflow_versions/{workflows.published_version}","type":"published_versions"},"workflows.attached_images":{"href":"/workflows/{workflows.id}/attached_images","type":"media"},"workflows.classifications_export":{"href":"/workflows/{workflows.id}/classifications_export","type":"media"}},"meta":{"workflows":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/workflows?id=3333","previous_href":null,"next_href":null,"last_href":"/workflows?id=3333"}}}'
+  recorded_at: Wed, 09 Aug 2023 20:39:12 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/workflows/9999
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 09 Aug 2023 20:39:12 GMT
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"7f547d624f1ed25e8f02cb02ad8f5df8"
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      X-Request-Id:
+      - c0c7c1e1a75ca2d2e1446afd882d0766
+      X-Runtime:
+      - '0.114474'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"workflows":[{"id":"3333","display_name":"Test Workflow 9999","tasks":{"T0":{"help":"","type":"single","answers":[{"label":"Yes"},{"label":"No"}],"question":"Enter
+        a question.","required":false}},"steps":[],"classifications_count":0,"subjects_count":12,"created_at":"2019-05-29T21:24:34.975Z","updated_at":"2023-04-28T20:06:43.204Z","finished_at":null,"first_task":"T0","primary_language":"en","version":"5.8","content_language":"en","prioritized":false,"grouped":false,"pairwise":false,"retirement":{"options":{"count":99},"criteria":"classification_count"},"retired_set_member_subjects_count":0,"href":"/workflows/3333","active":false,"mobile_friendly":false,"aggregation":{},"configuration":{"level": "2"},"public_gold_standard":false,"completeness":0.0,"links":{"project":"1693","subject_sets":["4700"],"tutorial_subject":null,"published_version":null,"attached_images":{"href":"/workflows/3333/attached_images","type":"attached_images","ids":[]},"classifications_export":{"href":"/workflows/3333/classifications_export","type":"classifications_exports"}}}],"links":{"workflows.project":{"href":"/projects/{workflows.project}","type":"projects"},"workflows.subject_sets":{"href":"/subject_sets?workflow_id={workflows.id}","type":"subject_sets"},"workflows.tutorial_subject":{"href":"/subjects/{workflows.tutorial_subject}","type":"tutorial_subjects"},"workflows.published_version":{"href":"/workflow_versions/{workflows.published_version}","type":"published_versions"},"workflows.attached_images":{"href":"/workflows/{workflows.id}/attached_images","type":"media"},"workflows.classifications_export":{"href":"/workflows/{workflows.id}/classifications_export","type":"media"}},"meta":{"workflows":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/workflows?id=3333","previous_href":null,"next_href":null,"last_href":"/workflows?id=3333"}}}'
+  recorded_at: Wed, 09 Aug 2023 20:39:12 GMT
+- request:
+    method: get
+    uri: https://panoptes-staging.zooniverse.org/api/workflows/1111
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization:
+      - Bearer <ACCESS_TOKEN>
+      Accept:
+      - application/vnd.api+json; version=1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 09 Aug 2023 20:39:12 GMT
+      Content-Type:
+      - application/vnd.api+json; version=1; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"7f547d624f1ed25e8f02cb02ad8f5df8"
+      Vary:
+      - Accept, Origin
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      P3p:
+      - CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+      X-Request-Id:
+      - c0c7c1e1a75ca2d2e1446afd882d0766
+      X-Runtime:
+      - '0.114474'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: '{"workflows":[{"id":"1111","display_name":"Test Workflow 1111","tasks":{"T0":{"help":"","type":"single","answers":[{"label":"Yes"},{"label":"No"}],"question":"Enter
+        a question.","required":false}},"steps":[],"classifications_count":0,"subjects_count":12,"created_at":"2019-05-29T21:24:34.975Z","updated_at":"2023-04-28T20:06:43.204Z","finished_at":null,"first_task":"T0","primary_language":"en","version":"5.8","content_language":"en","prioritized":false,"grouped":false,"pairwise":false,"retirement":{"options":{"count":99},"criteria":"classification_count"},"retired_set_member_subjects_count":0,"href":"/workflows/3333","active":false,"mobile_friendly":false,"aggregation":{},"configuration":{"level": "0"},"public_gold_standard":false,"completeness":0.0,"links":{"project":"1693","subject_sets":["4700"],"tutorial_subject":null,"published_version":null,"attached_images":{"href":"/workflows/3333/attached_images","type":"attached_images","ids":[]},"classifications_export":{"href":"/workflows/3333/classifications_export","type":"classifications_exports"}}}],"links":{"workflows.project":{"href":"/projects/{workflows.project}","type":"projects"},"workflows.subject_sets":{"href":"/subject_sets?workflow_id={workflows.id}","type":"subject_sets"},"workflows.tutorial_subject":{"href":"/subjects/{workflows.tutorial_subject}","type":"tutorial_subjects"},"workflows.published_version":{"href":"/workflow_versions/{workflows.published_version}","type":"published_versions"},"workflows.attached_images":{"href":"/workflows/{workflows.id}/attached_images","type":"media"},"workflows.classifications_export":{"href":"/workflows/{workflows.id}/classifications_export","type":"media"}},"meta":{"workflows":{"page":1,"page_size":20,"count":1,"include":[],"page_count":1,"previous_page":null,"next_page":null,"first_href":"/workflows?id=3333","previous_href":null,"next_href":null,"last_href":"/workflows?id=3333"}}}'
+  recorded_at: Wed, 09 Aug 2023 20:39:12 GMT
