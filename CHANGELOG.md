@@ -1,3 +1,6 @@
+# 1.2.1
+* Fix: Workflow promotion via project preferences now checks to make sure it doesn't demote you by checking the workflow configs. This can be skipped by using the new set_user_workflow method.
+
 # 1.2.0
 
 * Relax the `faraday-panoptes` gem version constraints to allow it to upgrade
